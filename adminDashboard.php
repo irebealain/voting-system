@@ -6,6 +6,11 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <section class="mainContainer"></section>
+    <section class="mainContainer">
+        <div class="navigationBar">
+            <img src="./Assets/Agahozo+Shalom+Logo.png" alt="logo">
+        </div>
+        <div class="heroSection"></div>
+    </section>
 </body>
 </html>
