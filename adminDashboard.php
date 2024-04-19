@@ -6,6 +6,6 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    
+    <section class="mainContainer"></section>
 </body>
 </html>
