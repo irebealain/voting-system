@@ -6,3 +6,9 @@
 body {
     
 }
+button {
+    font-size: 4rem;
+    font-weight: bold;
+    max-width: 40rem;
+    max-height: 10rem;
+}

@@ -7,6 +7,12 @@
     <title>Admin-login</title>
 </head>
 <body>
+    <h1>LOG IN</h1>
+    <label for="">
+        <input type="text" name="" id="">
+    </label>
     
+    <input type="password" name="" id="">
+    <button type="submit">LOG IN</button>
 </body>
 </html>
