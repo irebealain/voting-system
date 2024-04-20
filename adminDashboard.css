@@ -121,3 +121,9 @@
     height: 100vh;
     background-color: #F8F5EF;
 }
+.logoDiv {
+  display: flex;
+}
+.navigationLinks {
+  display: flex;
+}
