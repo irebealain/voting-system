@@ -117,12 +117,31 @@
 }
 .mainContainer {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #F8F5EF;
 }
+.navigationBar {
+width: 100%;
+    max-width: 20%;
+}
 .logoDiv {
-  display: flex;
+    display: flex;
+    margin-left: 1rem;
+    gap: 0rem;
+    font-size: 0.6em;
+    align-items: center;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: .8rem;
 }
 .navigationLinks {
     display: flex;
@@ -130,4 +149,29 @@
     align-items: center;
     gap: 1rem;
     margin-left: 2rem;
+}
+.lastImg {
+    position: relative;
+}
+.sleeve {
+    /* background-color: #EDA246; */
+    /* opacity: 50%; */
+    position: absolute;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #fff;
+    top: 31rem;
+    left: 4.5rem;
+    z-index: 2;
+    /* background: transparent; */
+}
+span {
+    margin-left: 1.4rem; 
+}
+.logoutSvg {
+    position: absolute;
+    top: 35.5rem;
+    left: 6.8rem;
+    z-index: 2;
 }
