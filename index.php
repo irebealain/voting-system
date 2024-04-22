@@ -8,15 +8,17 @@
 </head>
 <body>
     <section class="heroSectionRight">
-        <img src="./Assets/Agahozo+Shalom+Logo.png" alt="ASYV logo" height="100px">
+        <img src="./Assets/Agahozo+Shalom+Logo.png" alt="ASYV logo" height="150px">
         <div class="headings">
             <h2>Welcome</h2>
             <h2>Administrator</h2>
         </div>
-        <button type="button">Login</button>
+        <a href="admin.php"><button type="button">LOG IN</button></a>
     </section>
     <section class="heroSectionLeft">
-        <img src="./Assets/undraw_sign_up_ln1s 1.png" alt="" height="100%" width="100%">
+        <img src="./Assets/undraw_sign_up_ln1s 1.png" alt="" height="100%" style="width: 100%;
+        max-width: 100%;
+        margin-left: 16rem;">
     </section>
 </body>
 </html>
