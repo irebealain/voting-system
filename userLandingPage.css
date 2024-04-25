@@ -7,6 +7,12 @@
     font-style: normal;
     margin: 0;
 }
+body {
+    background-color: #F8F5EF;
+}
+svg {
+    cursor: pointer;
+}
 .navigationBar {
     width: 100%;
     height: 100px;
@@ -16,7 +22,7 @@
     align-items: center;
     justify-content: space-around;
     gap: 30rem;
-    border-bottom: 1.5px solid rgb(134 124 124);
+    /* border-bottom: 1.5px solid rgb(134 124 124); */
 }
 ul {
     display: flex;
@@ -31,7 +37,20 @@ ul li {
 .heroSection {
     /* background-image: url(./Assets/cover.png); */
     width: 100%;
-    height: 400px;
+    height: 520px;
+
+}
+.icon1 {
+    position: absolute;
+    top: 20rem;
+    right: 1rem;
+    transform: rotate(180deg);
+}
+.icon2 {
+    position: absolute;
+    top: 20rem;
+    left: 1rem;
+    /* stroke: 2px solid #ED; */
 }
 .absoluteEnt {
     display: flex;
@@ -45,4 +64,76 @@ ul li {
     width: 100%;
     max-width: 85%;
     
+}
+.voteBtn {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    background-color: #EDA246;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    top: 30rem;
+    left: 35rem;
+}
+.dotBox {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    top: 36rem;
+    left: 40rem;
+    gap: 2rem;
+}
+.dots {
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.firstDot {
+    background-color: #EDA246;
+}
+h5 {
+    text-align: center;
+    margin-top: 5rem;
+}
+.profiles {
+    margin-top: 3rem;
+    height: 500px;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-left: 6rem;
+}
+.candidateProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 75%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6%;
+}
+footer {
+    width: 100%;
+    /* height: 100px; */
+    margin-top: 3rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30rem;
 }
