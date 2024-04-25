@@ -13,7 +13,7 @@
             <h2>Welcome</h2>
             <h2>Administrator</h2>
         </div>
-        <a href="admin.php"><button type="button">LOG IN</button></a>
+        <a href="admin.php" style="text-decoration: none;"><button type="button">LOG IN</button></a>
     </section>
     <section class="heroSectionLeft">
         <img src="./Assets/undraw_sign_up_ln1s 1.png" alt="" height="100%" style="width: 100%;

@@ -44,9 +44,12 @@ button {
     cursor: pointer;
     
 }
-button:a {
+
+a:link {
     text-decoration: none;
+
 }
+
 .heroSectionLeft {
     height: 100vh;
     display: flex;
