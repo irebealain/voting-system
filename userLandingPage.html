@@ -21,9 +21,9 @@
     </section>
     <!-- hero section -->
     <section class="heroSection">
-    <img src="./Assets/cover.png" alt="asyv area" width="100%" height="519px" style="transform: translateX(6%); max-width:90%; position: relative; opacity: 0.8;">
-    <svg width="30px" height="30px" viewBox="0 0 1024.00 1024.00" class="icon1" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#eda246" stroke="#eda246" stroke-width="0.01024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#eda246" stroke-width="92.16"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g><g id="SVGRepo_iconCarrier"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g></svg>
-    <svg width="30px" height="30px" viewBox="0 0 1024.00 1024.00" class="icon2" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#eda246" stroke="#eda246" stroke-width="0.01024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#eda246" stroke-width="92.16"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g><g id="SVGRepo_iconCarrier"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g></svg>
+    <img id = "images" src="./Assets/cover.png" alt="asyv area" width="100%" height="519px" style="transform: translateX(6%); max-width:90%; position: relative; opacity: 0.8;">
+    <svg onclick = "changePicF()" width="30px" height="30px" viewBox="0 0 1024.00 1024.00" class="icon1" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#eda246" stroke="#eda246" stroke-width="0.01024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#eda246" stroke-width="92.16"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g><g id="SVGRepo_iconCarrier"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g></svg>
+    <svg onclick = "changePicB()" width="30px" height="30px" viewBox="0 0 1024.00 1024.00" class="icon2" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#eda246" stroke="#eda246" stroke-width="0.01024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#eda246" stroke-width="92.16"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g><g id="SVGRepo_iconCarrier"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g></svg>
         <div class="absoluteEnt"><h1>Vote for Students Representatives</h1>
             <p style="padding-left: 5rem;">Student government are known as enrolled scholars at the Agahozo Shalom Youth Village elected to lobby for the student’s rights and represent the point of view of their peers.</p></div>
         <button class="voteBtn">VOTE</button>
@@ -103,5 +103,28 @@
             </ul>
         </div>
     </footer>
+<!-- script for changing the images -->
+    <script>
+        let Photoes = ["Assets/cover.png","Assets/Rectangle.png","Assets/undraw_sign_up_ln1s 1.png"];
+        let i = 0;
+         function changePicF (){
+            if (i < Photoes.length){
+                const slide = document.getElementById("images");
+                slide.src = Photoes[i];
+                i++;
+            }
+            else if (i >= Photoes.length - 1){
+                i = 0;
+            }
+         }
+         function changePicB (){
+            if (i > 0){
+                i--;
+                const slide = document.getElementById("images");
+                slide.src = Photoes[i];
+            }
+            
+         }
+    </script>
 </body>
 </html>
