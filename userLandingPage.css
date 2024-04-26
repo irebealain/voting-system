@@ -42,14 +42,14 @@ ul li {
 }
 .icon1 {
     position: absolute;
-    top: 20rem;
-    right: 1rem;
+    top: 22.1rem;
+    right: 3rem;
     transform: rotate(180deg);
 }
 .icon2 {
     position: absolute;
-    top: 20rem;
-    left: 1rem;
+    top: 22.1rem;
+    left: 3rem;
     /* stroke: 2px solid #ED; */
 }
 .absoluteEnt {
@@ -80,7 +80,7 @@ ul li {
     font-size: 20px;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
-    top: 30rem;
+    top: 34rem;
     left: 35rem;
 }
 .dotBox {
@@ -88,7 +88,7 @@ ul li {
     align-items: center;
     flex-direction: row;
     position: absolute;
-    top: 36rem;
+    top: 38.4rem;
     left: 40rem;
     gap: 2rem;
 }

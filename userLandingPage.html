@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="userLandingPage.css">
+    <script src="userLandingPage.js"></script>
     <title>Home Page</title>
 </head>
 <body>
@@ -21,11 +22,19 @@
     </section>
     <!-- hero section -->
     <section class="heroSection">
-    <img id = "images" src="./Assets/cover.png" alt="asyv area" width="100%" height="519px" style="transform: translateX(6%); max-width:90%; position: relative; opacity: 0.8;">
+    <img id = "images" src="./Assets/cover.png" alt="asyv area" width="100%" height="519px" style="transform: translateX(13%); max-width:80%; position: relative; margin-top: 1rem; transition: transform 0.5s ease;">
     <svg onclick = "changePicF()" width="30px" height="30px" viewBox="0 0 1024.00 1024.00" class="icon1" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#eda246" stroke="#eda246" stroke-width="0.01024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#eda246" stroke-width="92.16"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g><g id="SVGRepo_iconCarrier"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g></svg>
-    <svg onclick = "changePicB()" width="30px" height="30px" viewBox="0 0 1024.00 1024.00" class="icon2" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#eda246" stroke="#eda246" stroke-width="0.01024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#eda246" stroke-width="92.16"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g><g id="SVGRepo_iconCarrier"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g></svg>
-        <div class="absoluteEnt"><h1>Vote for Students Representatives</h1>
-            <p style="padding-left: 5rem;">Student government are known as enrolled scholars at the Agahozo Shalom Youth Village elected to lobby for the student’s rights and represent the point of view of their peers.</p></div>
+    <svg onclick ="changePicB()" width="30px" height="30px" viewBox="0 0 1024.00 1024.00" class="icon2" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#eda246" stroke="#eda246" stroke-width="0.01024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#eda246" stroke-width="92.16"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g><g id="SVGRepo_iconCarrier"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#EDA246"></path></g></svg>
+        <div class="absoluteEnt">
+            <h1 id="headings" style="color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-left: 3rem;
+            font-style: normal;
+            font-size: 2.5rem;">Vote for Students Representatives</h1>
+            <!-- <p style="padding-left: 5rem;">Student government are known as enrolled scholars at the Agahozo Shalom Youth Village elected to lobby for the student’s rights and represent the point of view of their peers.</p> -->
+        </div>
         <button class="voteBtn">VOTE</button>
         <div class="dotBox">
             <div class="dots firstDot"></div>
@@ -103,28 +112,5 @@
             </ul>
         </div>
     </footer>
-<!-- script for changing the images -->
-    <script>
-        let Photoes = ["Assets/cover.png","Assets/Rectangle.png","Assets/undraw_sign_up_ln1s 1.png"];
-        let i = 0;
-         function changePicF (){
-            if (i < Photoes.length){
-                const slide = document.getElementById("images");
-                slide.src = Photoes[i];
-                i++;
-            }
-            else if (i >= Photoes.length - 1){
-                i = 0;
-            }
-         }
-         function changePicB (){
-            if (i > 0){
-                i--;
-                const slide = document.getElementById("images");
-                slide.src = Photoes[i];
-            }
-            
-         }
-    </script>
 </body>
 </html>
