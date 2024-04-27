@@ -115,19 +115,23 @@
     font-style: normal;
     margin: 0;
 }
+body {
+  background-color: #F8F5EF;
+}
 .mainContainer {
     display: flex;
     width: 100%;
     height: 100%;
     background-color: #F8F5EF;
     /* border-right: 1.5px solid rgb(134 124 124); */
-    border-right: 1.5px solid rgb(134 124 124);
     position: absolute;
 }
 .navigationBar {
     width: 100%;
     max-width: 20%;
     position: fixed;
+    background-color: #fff;
+    border-right: 1.5px solid rgb(134 124 124);
 }
 .heroSection {
   width: 100%;
@@ -210,15 +214,23 @@ svg::after {
   width: 10px;
   height: 10px;
 }
-
+.repCarts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  row-gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 95%;
+}
 .cart {
   display: flex;
-  gap: 1.3rem;
-  margin-left: 3rem;
-  padding-top: 2rem;
+  gap: 1.1rem;
+  margin-left: 2.5rem;
+  padding-top: 1.2rem;
   padding-left: 2rem;
   width: 100%;
-  max-width: 33%;
+  max-width: 80%;
   background-color: #fff;
   border-radius: 1.6rem;
   align-items: flex-start;
@@ -227,6 +239,42 @@ svg::after {
 .perProf {
   display: flex;
   justify-content: space-between;
-  gap: 5rem;
-  padding-bottom: 2rem;
+  gap: 4rem;
+  padding-bottom: 1rem;
+}
+
+/* table styles */
+.table-container {
+  margin: 3rem auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 90%;
+  margin-left: 3rem;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #F8F5EF;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: #F8F5EF;
+}
+
+tbody tr:nth-child(odd) td {
+  background-color: #FFFFFF;
+}
+.statisticsCart {
+  display: flex;
+  border-radius: 1.6rem;
 }

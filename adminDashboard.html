@@ -4,12 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
-    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Candidate', 'Number of Votes'],
+            ['Butati Lesly',     130],
+            ['John Kelly',      70],
+            ['Semaza Emmanuel',  304]
+            // ['Watch TV', 2],
+            // ['Sleep',    7]
+        ]);
+
+        var options = {
+            title: 'Voted Students Stastics',
+            titleTextStyle: { color: '#EDA246', fontSize: 20 },
+            is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+        }
+    </script>
+    <!-- bar chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Candidate', 'Number of Votes'],
+            ['Butati Lesly',     130],
+            ['John Kelly',      70],
+            ['Semaza Emmanuel',  304]
+            // ['Watch TV', 2],
+            // ['Sleep',    7]
+        ]);
+
+        var options = {
+            title: 'Voted Students Stastics',
+            titleTextStyle: { color: '#EDA246', fontSize: 20 },
+            is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
+        chart.draw(data, options);
+        }
+    </script>
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <script src="userLandingPage.js"></script>
-    <!--  -->
     <section class="mainContainer">
         <div class="navigationBar" style="border-right: 1.5px solid rgb(134 124 124);">
             <div class="logoDiv">
@@ -76,13 +122,94 @@
             <h4 style="margin-left: 2rem; margin-left: 3rem; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal;">Top representatives</h4>
             <div class="repCarts">
                 <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 2.2rem;">Teta Butati Lesly</h2>
-                    <p>Presidential Position</p>
+                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.5rem;">Teta Butati Lesly</h2>
+                    <p style="font-size: 1em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
                     <div class="perProf">
-                        <h1 style="font-size: 3.7rem;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="100px" width="100px">
+                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
+                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
                     </div>
                 </div>
+                <!-- second candidate -->
+                <div class="cart">
+                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.5rem;">Teta Butati Lesly</h2>
+                    <p style="font-size: 1em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
+                    <div class="perProf">
+                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
+                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
+                    </div>
+                </div>
+                <!-- second candidate -->
+                <div class="cart">
+                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.5rem;">Teta Butati Lesly</h2>
+                    <p style="font-size: 1em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
+                    <div class="perProf">
+                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
+                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
+                    </div>
+                </div>
+            </div>
+            <!-- table overview -->
+            <div class="table-container">
+                <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal;">Students Voted</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reg ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Family</th>
+                            <th>Grade</th>
+                            <th>Class</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>202306154</td>
+                            <td>Irebe Gashumba Alain</td>
+                            <td>Male</td>
+                            <td>Rugamba Cyprien</td>
+                            <td>Intwali</td>
+                            <td>S5 MPC</td>
+                        </tr>
+                        <tr>
+                            <td>202306154</td>
+                            <td>Irebe Gashumba Alain</td>
+                            <td>Male</td>
+                            <td>Rugamba Cyprien</td>
+                            <td>Intwali</td>
+                            <td>S5 MPC</td>
+                        </tr>
+                        <tr>
+                            <td>202306154</td>
+                            <td>Irebe Gashumba Alain</td>
+                            <td>Male</td>
+                            <td>Rugamba Cyprien</td>
+                            <td>Intwali</td>
+                            <td>S5 MPC</td>
+                        </tr>
+                        <tr>
+                            <td>202306154</td>
+                            <td>Irebe Gashumba Alain</td>
+                            <td>Male</td>
+                            <td>Rugamba Cyprien</td>
+                            <td>Intwali</td>
+                            <td>S5 MPC</td>
+                        </tr>
+                        <tr>
+                            <td>202306154</td>
+                            <td>Irebe Gashumba Alain</td>
+                            <td>Male</td>
+                            <td>Rugamba Cyprien</td>
+                            <td>Intwali</td>
+                            <td>S5 MPC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- statistics -->
+            <div class="statisticsCart">
+                <div id="piechart_3d" style="width: 100%; height: 400px;"></div>
+                <div id="piechart_3d_2" style="width: 100%; height: 400px;"></div>
             </div>
         </div>
     </section>
