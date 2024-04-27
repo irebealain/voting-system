@@ -275,6 +275,10 @@ tbody tr:nth-child(odd) td {
   background-color: #FFFFFF;
 }
 .statisticsCart {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
   border-radius: 1.6rem;
+  margin-left: 3rem;
+  /* margin-right: 1rem; */
 }
