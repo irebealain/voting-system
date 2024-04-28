@@ -81,3 +81,34 @@ span {
 }
 /* Right section  */
 
+/* table styles */
+.table-container {
+    margin: 3rem auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 90%;
+    margin-left: 3rem;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #F8F5EF;
+  }
+  
+  tbody tr:nth-child(even) td {
+    background-color: #F8F5EF;
+  }
+  
+  tbody tr:nth-child(odd) td {
+    background-color: #FFFFFF;
+  }
