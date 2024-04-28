@@ -156,6 +156,19 @@ ul {
     font-style: normal;
     font-size: .8rem;
 }
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:link {
+  color: #000;
+}
+a:hover {
+  color: #48805F; 
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.8s ease;
+}
 .navigationLinks {
     display: flex;
     flex-direction: row;
@@ -185,10 +198,10 @@ span {
 .logoutSvg {
     position: absolute;
     top: 35.5rem;
-    left: 6.8rem;
+    left: -0.2rem;
     z-index: 2;
+    animation: movingAnimation;
 }
-
 /* right division styles */
 .rightNavBar {
   display: flex;
@@ -214,10 +227,24 @@ svg::after {
   width: 10px;
   height: 10px;
 }
+@keyframes movingAnimation {
+  0% {
+    transform: translateX(6.8rem);
+  }
+  50% {
+    transform: translateX(9rem);
+  }
+  100% {
+    transform: translateX(6.8rem); 
+  }
+}
+.logoutSvg {
+  animation: movingAnimation 5s infinite alternate;
+}
 .repCarts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   row-gap: 2rem;
   margin-top: 2rem;
   width: 100%;
@@ -262,9 +289,13 @@ th, td {
   padding: 10px;
   text-align: center;
 }
-
+td {
+  font-size: 0.8rem;
+}
 th {
   background-color: #F8F5EF;
+  color: #48805F;
+  font-size: 0.9rem;
 }
 
 tbody tr:nth-child(even) td {
