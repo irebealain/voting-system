@@ -134,9 +134,9 @@ body {
     border-right: 1.5px solid rgb(134 124 124);
 }
 .heroSection {
-  width: 100%;
-  max-width: 80%;
-  margin-left: 17rem;
+    width: 100%;
+    max-width: 80%;
+    margin-left: 17rem;
 }
 .logoDiv {
     display: flex;
