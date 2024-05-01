@@ -3,57 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashboard.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Butati Lesly',     130],
-            ['John Kelly',      70],
-            ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Presidential Position',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- bar chart -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Number of Voted Students',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        chart.draw(data, options);
-        }
-    </script>
-    <title>Admin Dashboard</title>
+    <title>Administrators</title>
+    <link rel="stylesheet" href="addAdminPage.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="adminStudentDashboard.css">
+    <title>Student List</title>
 </head>
 <body>
     <section class="mainContainer">
@@ -96,7 +56,7 @@
                 <li>
                     <div class="navigationLinks">
                         <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="24px" height="24px" viewBox="0 0 30 30" version="1.1" id="svg822" inkscape:version="0.92.4 (f8dce91, 2019-08-02)" sodipodi:docname="admin.svg" fill="#EDA246"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.3"></g><g id="SVGRepo_iconCarrier"> <defs id="defs816"></defs> <sodipodi:namedview id="base" pagecolor="#EDA246" bordercolor="#EDA246DA246" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="12.610071" inkscape:cx="13.690863" inkscape:cy="14.709664" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="true" units="px" inkscape:window-width="1366" inkscape:window-height="713" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" showguides="false" inkscape:snap-global="false"> <inkscape:grid type="xygrid" id="grid816"></inkscape:grid> </sodipodi:namedview> <metadata id="metadata819"> <rdf:rdf> <cc:work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> <dc:title> </dc:title> </cc:work> </rdf:rdf> </metadata> <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-289.0625)"> <path style="opacity:0.91000001;fill:#EDA246;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 11.916016 6.28125 A 4 4 0 0 0 7.9160156 10.28125 A 4 4 0 0 0 11.916016 14.28125 A 4 4 0 0 0 15.916016 10.28125 A 4 4 0 0 0 11.916016 6.28125 z M 8.4628906 15.115234 C 5.2252742 16.489124 3.0845987 19.623082 2.9824219 23.138672 C 5.1722039 25.642012 8.3828992 27.230469 11.972656 27.230469 C 13.939081 27.230469 15.782366 26.738864 17.416016 25.896484 C 16.972529 25.303803 16.599939 24.654546 16.285156 23.957031 C 15.297133 21.767701 14.789426 19.133132 14.728516 16.570312 L 14.722656 16.318359 L 12.001953 20.574219 L 8.4628906 15.115234 z M 22.037109 15.308594 C 20.292352 15.308594 17.177734 17.251953 17.177734 17.251953 C 17.287817 21.883593 19.126557 27.009156 22.037109 26.972656 C 22.040309 26.972626 22.043675 26.972696 22.046875 26.972656 C 22.864919 26.962256 23.588979 26.535536 24.179688 25.916016 C 24.770398 25.296496 25.255835 24.472265 25.654297 23.546875 C 26.45122 21.696085 26.896484 19.437792 26.896484 17.576172 L 26.896484 17.308594 L 26.671875 17.166016 C 26.671875 17.166016 25.951124 16.70805 25.029297 16.25 C 24.107471 15.79195 23.009546 15.308594 22.041016 15.308594 L 22.037109 15.308594 z M 22.037109 16.279297 L 22.041016 16.279297 C 22.641611 16.279297 23.726421 16.688174 24.597656 17.121094 C 25.326193 17.483104 25.720925 17.73488 25.896484 17.84375 C 25.857384 19.50574 25.45849 21.539389 24.759766 23.162109 C 24.392753 24.014469 23.950753 24.748774 23.476562 25.246094 C 23.003258 25.742454 22.526857 25.9928 22.037109 26 L 22.037109 16.279297 z " transform="translate(0,289.0625)" id="path852"></path> </g> </g></svg>
-                        <a href="./addAdminPage.html"><p>Administrators</p></a>
+                        <a href="addAdminPage.html"><p>Administrators</p></a>
                     </div>
                 </li>
             </ul>
@@ -112,203 +72,58 @@
         <!-- Right side -->
         <div class="heroSection">
             <div class="rightNavBar">
-                <h1 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.7rem;">Overview</h1>
+                <h1 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.7rem;">Adminstrators</h1>
                 <div class="notProf">
-                    <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(30)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#EDA246" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"> <path d="M18.7491 9.70957V9.00497C18.7491 5.13623 15.7274 2 12 2C8.27256 2 5.25087 5.13623 5.25087 9.00497V9.70957C5.25087 10.5552 5.00972 11.3818 4.5578 12.0854L3.45036 13.8095C2.43882 15.3843 3.21105 17.5249 4.97036 18.0229C9.57274 19.3257 14.4273 19.3257 19.0296 18.0229C20.789 17.5249 21.5612 15.3843 20.5496 13.8095L19.4422 12.0854C18.9903 11.3818 18.7491 10.5552 18.7491 9.70957Z" stroke="#EDA246" stroke-width="1.5"></path> <path d="M7.5 19C8.15503 20.7478 9.92246 22 12 22C14.0775 22 15.845 20.7478 16.5 19" stroke="#EDA246" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
-                    <img src="./Assets/Rectangle.png" alt="admin profile" height="35px" width="35px">
+                    <svg style="cursor: pointer;" width="20px" height="20px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#eda246" stroke="#eda246"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>new-indicator-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="scheduler" fill="#eda246" transform="translate(85.333333, 85.333333)"> <path d="M170.666667,1.42108547e-14 C264.923264,-3.10380131e-15 341.333333,76.4100694 341.333333,170.666667 C341.333333,264.923264 264.923264,341.333333 170.666667,341.333333 C76.4100694,341.333333 2.57539587e-14,264.923264 1.42108547e-14,170.666667 C2.6677507e-15,76.4100694 76.4100694,3.15255107e-14 170.666667,1.42108547e-14 Z M192,85.3333333 L149.333333,85.3333333 L149.333333,149.333333 L85.3333333,149.333333 L85.3333333,192 L149.333333,191.999333 L149.333333,256 L192,256 L191.999333,191.999333 L256,192 L256,149.333333 L191.999333,149.333333 L192,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+                   <a href=""><p style="font-size: 12px; cursor: pointer;">Add new Admin</p></a>
                 </div>
             </div>
-            <!-- top representatives -->
-            <h4 style="margin-left: 2rem; margin-left: 3rem; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Top representatives</h4>
-            <div class="repCarts">
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <!-- second candidate -->
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <!-- second candidate -->
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-            </div>
-            <!-- statistics -->
-            <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Overview Statistics</h4>
-            <div class="statisticsCart">
-                <div id="piechart_3d_2" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_3d" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
+             
+                
             <!-- table overview -->
             <div class="table-container">
-                <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Students Voted</h4>
                 <table>
                     <thead>
                         <tr>
                             <th>Profile</th>
-                            <th>Reg ID</th>
+                            <th>E-mail</th>
                             <th>Name</th>
                             <th>Gender</th>
-                            <th>Family</th>
-                            <th>Grade</th>
-                            <th>Class</th>
-                            <th>Status</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
                                 width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
+                            <td>justin@asyv.org</td>
+                            <td>Justin Mutangana</td>
                             <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
+                            
                         </tr>
                         <tr>
                             <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
                                 width: 45px;"></td>
-                            <td>202306154</td>
+                            <td>irebalain@gmail.com</td>
                             <td>Irebe Gashumba Alain</td>
                             <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
+                            
                         </tr>
                         <tr>
                             <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
                                 width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
+                            <td>semazaemmanuel@gmail.com</td>
+                            <td>Emmanuel SEMAZA</td>
                             <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
+                            
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <button>Delete Admin</button>
         </div>
     </section>
+</body>
+</html>
 </body>
 </html>
