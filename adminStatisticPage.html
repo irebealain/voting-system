@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="adminStatisticPage.css">
+    <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
     <!-- Presidential Position -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -395,6 +396,32 @@
         chart.draw(data, options);
         }
     </script>
+    <!-- clubs and communications -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Candidate', 'Number of Votes'],
+            ['Voted Student',     130],
+            ['Non Voted Students',      70],
+            // ['Semaza Emmanuel',  304]
+            // ['Watch TV', 2],
+            // ['Sleep',    7]
+        ]);
+
+        var options = {
+            title: 'Communication Position',
+            pieHole: 0.5,
+            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
+            is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_communication'));
+        chart.draw(data, options);
+        }
+    </script>
     <title>Statistics</title>
 </head>
 <body>
@@ -486,10 +513,13 @@
                 <div id="piechart_education_male" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
                 <div id="piechart_education_female" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
             </div>
-            <div class="statisticsCart2">
-                <div id="piechart_clubs" style="width: 100%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_juniors_male" style="width: 100%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_juniors_female" style="width: 100%; height: 300px; border-radius: 1.6rem;"></div>
+            <div class="statisticsCart">
+                <div id="piechart_juniors_male" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
+                <div id="piechart_juniors_female" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
+            </div>
+            <div class="statisticsCart">
+                <div id="piechart_clubs" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
+                <div id="piechart_communication" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
             </div>
         </div>
     </section>

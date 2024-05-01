@@ -19,6 +19,7 @@ body {
     align-items: center;
     justify-content: space-around;
     gap: 30rem;
+    /* box-shadow:rgba(0, 0, 0, 0.1) */
 }
 .logo-image {
     width: 90px;
@@ -36,35 +37,73 @@ ul li {
     list-style: none;
     cursor: pointer;
 }
-
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:link {
+    color: #000;
+}
+a:hover {
+    color: #48805F; 
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.8s ease;
+}
 .heroSection {
     width: 100%;
-    height: 520px;
+    max-width: 85%;
+    height: 500px;
     position: relative;
+    background-image: url(./Assets/cover.png);
+    margin-top: 2rem;
+    margin-left: 7rem;
+
 }
 
 .icon1, .icon2 {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    /* /* top: 50%; */
+    /* transform: translateY(-50%);  */
     cursor: pointer;
 }
 
 .icon1 {
-    left: 10px;
+    left: -4rem;
+    top: 15rem;
+    animation: moveAnimation 5s infinite alternate;
 }
 
+@keyframes moveAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-2rem);
+    }
+    100% {
+      transform: translateX(0); 
+    }
+}
 .icon2 {
-    right: 10px;
+    animation: movingAnimation 5s infinite alternate;
+    top: 15rem;
+    right: -3rem;
 }
 
-.absoluteEnt {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: absolute;
-    top: 11rem;
-    left: 5rem;
+@keyframes movingAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(2rem);
+    }
+    100% {
+      transform: translateX(0); 
+    }
+}
+.icon2 {
+    animation: movingAnimation 5s infinite alternate;
 }
 
 .voteBtn {
@@ -81,8 +120,8 @@ ul li {
     font-size: 20px;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
-    top: 28rem;
-    left: 35rem;
+    top: 27rem;
+    left: 28rem;
 }
 
 .dotBox {
@@ -90,8 +129,8 @@ ul li {
     align-items: center;
     flex-direction: row;
     position: absolute;
-    top: 32.2rem;
-    left: 40rem;
+    top: 32.5rem;
+    left: 33rem;
     gap: 2rem;
 }
 
@@ -255,4 +294,116 @@ footer {
     to {
         transform: translateX(0);
     }
+}
+
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* .slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+} */
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+  background: rgba(0, 0, 0, 0.8);
 }

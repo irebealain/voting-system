@@ -218,6 +218,7 @@ span {
 
 svg {
   position: relative;
+  cursor: pointer;
 }
 svg::after {
   content: '10';
