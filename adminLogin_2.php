@@ -21,8 +21,8 @@
            <input type="password" id="password" required>
            <label for="password">Password</label>
          </div>
-         <a href="adminDashboard.html">
-         <button>LOG IN</button></a>
+         
+         <button><a href="adminDashboard.php">LOG IN</a></button>
        </form>
      </div>
      
