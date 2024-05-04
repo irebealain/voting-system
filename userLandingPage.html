@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="userLandingPage.css">
     <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <title>Home Page</title>
 </head>
 <body>
@@ -25,16 +26,27 @@
     </section>
     
     <section class="heroSection">
-        <h1 style="position: absolute; top: 10rem; left: 14rem; color: #fff; font-size: 2.3rem;">
-            VOTE FOR THE GUILD REPRESENTATIVES
+        <h1 style="position: absolute; top: 10rem; left: 14rem; color: #ffff; font-size: 4rem; z-index: 10;">
+            Welcome & <span id="typed-text" style="color: #EDA246;">Enjoy!</span> 
         </h1>
+        <script>
+            const options = {
+                strings: ['Relish!', 'Be fond!', 'Vote!'],
+                typeSpeed: 50, // Typing speed in milliseconds
+                backSpeed: 40, // Backspacing speed in milliseconds
+                loop: true, // Set to true if you want to loop the strings
+                showCursor: false, // Option to show cursor
+            };
+            
+            const typed = new Typed('#typed-text', options);
+        </script>
         <button class="voteBtn">VOTE</button>
         
         <ul class="slides">
             <input type="radio" name="radio-btn" id="img-1" checked />
             <li class="slide-container">
             <div class="slide">
-              <img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg" />
+              <img src="./Assets/cover.png" />
                 </div>
             <div class="nav">
               <label for="img-6" class="prev">&#x2039;</label>
@@ -45,7 +57,7 @@
             <input type="radio" name="radio-btn" id="img-2" />
             <li class="slide-container">
                 <div class="slide">
-                  <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />
+                  <img src="./Assets/22541.jpg" />
                 </div>
             <div class="nav">
               <label for="img-1" class="prev">&#x2039;</label>
@@ -56,54 +68,54 @@
             <input type="radio" name="radio-btn" id="img-3" />
             <li class="slide-container">
                 <div class="slide">
-                  <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />
+                  <img src="./Assets/337667699_900988587619904_3285560462582121940_n.jpg" />
                 </div>
             <div class="nav">
               <label for="img-2" class="prev">&#x2039;</label>
-              <label for="img-4" class="next">&#x203a;</label>
+                <label for="img-4" class="next">&#x203a;</label>
             </div>
             </li>
         
             <input type="radio" name="radio-btn" id="img-4" />
             <li class="slide-container">
                 <div class="slide">
-                  <img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />
+                    <img src="./Assets/P1370380.JPG" />
                 </div>
             <div class="nav">
-              <label for="img-3" class="prev">&#x2039;</label>
-              <label for="img-5" class="next">&#x203a;</label>
+                <label for="img-3" class="prev">&#x2039;</label>
+                <label for="img-5" class="next">&#x203a;</label>
             </div>
             </li>
         
             <input type="radio" name="radio-btn" id="img-5" />
             <li class="slide-container">
                 <div class="slide">
-                  <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
+                    <img src="./Assets/436209933_18425329258023513_4466184935530401292_n.jpg" />
                 </div>
             <div class="nav">
-              <label for="img-4" class="prev">&#x2039;</label>
-              <label for="img-6" class="next">&#x203a;</label>
+                <label for="img-4" class="prev">&#x2039;</label>
+                <label for="img-6" class="next">&#x203a;</label>
             </div>
             </li>
         
             <input type="radio" name="radio-btn" id="img-6" />
             <li class="slide-container">
                 <div class="slide">
-                  <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
+                    <img src="./Assets/440218527_18427464418023513_8275753052759737294_n.jpg" />
                 </div>
             <div class="nav">
-              <label for="img-5" class="prev">&#x2039;</label>
-              <label for="img-1" class="next">&#x203a;</label>
+                <label for="img-5" class="prev">&#x2039;</label>
+                <label for="img-1" class="next">&#x203a;</label>
             </div>
             </li>
         
             <li class="nav-dots">
-              <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-              <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-              <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-              <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-              <label for="img-5" class="nav-dot" id="img-dot-5"></label>
-              <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+                <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+                <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+                <label for="img-6" class="nav-dot" id="img-dot-6"></label>
             </li>
         </ul>
     </section>

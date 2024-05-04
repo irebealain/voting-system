@@ -71,3 +71,6 @@ function changeSlidePrev() {
 // Add event listeners
 // document.querySelector('.icon2').addEventListener('click', changeSlideNext);
 document.querySelector('.icon1').addEventListener('click', changeSlidePrev);
+
+// typing text 
+

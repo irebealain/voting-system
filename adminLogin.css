@@ -44,7 +44,13 @@ button {
     cursor: pointer;
     
 }
-button:a {
+a {
+    text-decoration: none;
+}
+a:link {
+    text-decoration: none;
+}
+a:active {
     text-decoration: none;
 }
 .heroSectionLeft {
