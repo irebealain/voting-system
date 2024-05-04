@@ -15,8 +15,6 @@
             ['Butati Lesly',     130],
             ['John Kelly',      70],
             ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
         ]);
 
         var options = {
