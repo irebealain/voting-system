@@ -8,25 +8,24 @@
 </head>
 <body>
 <section>
-   <div class="form-box">
-     <div class="form-value">
-       <form action="">
-         <h2>LOG IN</h2>
+    <div class="form-box">
+      <div class="form-value">
+        <form action="">
+          <h2>LOG IN</h2>  
 
-         <div class="inputbox">
-           <input type="email" required>
-           <label for="">Email</label>
-         </div>
-         <div class="inputbox">
-           <input type="password" id="password" required>
-           <label for="password">Password</label>
-         </div>
-         
-         <button><a href="adminDashboard.php">LOG IN</a></button>
-       </form>
-     </div>
-     
-   </div>
- </section>
+          <div class="inputbox">
+            <input type="email" required>
+            <label for="">Email</label>
+          </div>
+          <div class="inputbox">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+          </div>
+          
+          <button><a href="adminDashboard.php">LOG IN</a></button>
+        </form>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
