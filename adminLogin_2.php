@@ -10,19 +10,19 @@
 <section>
     <div class="form-box">
       <div class="form-value">
-        <form action="">
+        <form action="adminConn.php" method='POST'>
           <h2>LOG IN</h2>  
 
           <div class="inputbox">
-            <input type="email" required>
+            <input type="email" name="email" required>
             <label for="">Email</label>
           </div>
           <div class="inputbox">
-            <input type="password" id="password" required>
+            <input type="password" id="password" name="pass" required>
             <label for="password">Password</label>
           </div>
           
-          <button><a href="adminDashboard.php">LOG IN</a></button>
+          <button type='submit' name='adminsub'>LOG IN</button>
         </form>
       </div>
     </div>

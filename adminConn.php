@@ -2,9 +2,23 @@
     $server = 'localhost';
     $user = 'root';
     $password = '';
-    $db = 'election system';
+    $db = 'voting system';
 
-    $conn = mysqli_connect("localhost", "root", "", "election system");
+    $conn = mysqli_connect($server, $user, $password, $db);
+    
 
-    $nyaxo = "SELECT *FROM admin WHERE email = $email;
+    if(isset($_POST['adminsub']))
+    {
+        $email = $_POST['email'];
+        $pswd = $_POST['pass'];
+        $nyaxo = "SELECT *FROM `admin` WHERE `Email` = '$email' and `Password` = '$pswd'";
+        $result=mysqli_query($conn,$nyaxo);
+        $row=mysqli_fetch_assoc($result);
+        if($row){    
+            session_start();
+            $_SESSION['name']=$row['name'];
+            $_SESSION['Email']=$row['Email'];
+            header('location:adminDashboard.php');
+
+        }}
 ?>
