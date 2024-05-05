@@ -11,18 +11,18 @@
   
    <div class="form-box">
      <div class="form-value">
-       <form action="">
+       <form action="adminConn.php" method="POST">
          <h2>LOG IN</h2>
 
          <div class="inputbox">
-           <input type="text" required>
+           <input type="text" name="studentid" required>
            <label for="" id="label">Student ID</label>
          </div>
          <div class="inputbox">
-           <input type="password" id="password" required>
+           <input type="password" id="password" name="studentpswd" required>
            <label for="password">Password</label>
          </div>
-         <button>LOG IN</button>
+         <button type='submit' name='studentlogin'>LOG IN</button>
          <p style="text-align: center; padding-top: 10px;
          font-size: 12px; font-weight: 600; cursor: pointer; 
          " class="forget">Forgot Password</p>

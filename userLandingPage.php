@@ -1,3 +1,10 @@
+<?php 
+session_start();
+include('adminConn.php');
+if(!isset($_SESSION['ID'])){
+    header('location:front.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -231,7 +238,7 @@
             font-style: normal; font-size: 1.2em;margin-left: 2rem;">Support</h2>
             <p style="font-family: 'Poppins', sans-serif;
             font-style: normal; font-size: 0.8em;margin-left: 2rem;">Contact us</p>
-            <button id="closeButton" onclick="hidePopup()">LOG OUT</button>
+            <a href="front.php"><button id="closeButton" onclick="hidePopup()">LOG OUT</button></a>
         </div>
     </div>
     </div>

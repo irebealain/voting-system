@@ -20,8 +20,8 @@ session_destroy();
             <h2>Participate In ASYV</h2>
             <h2>Elections <span style="color: #EDA246;">Easily!</span></h2>
         </div>
-        <a href="Login.html" style="text-decoration: none;"><button type="button">LOG IN</button></a>
-        <a href="signup.html" style="text-decoration: none;"><button type="button">SIGN UP</button></a>
+        <a href="Login.php" style="text-decoration: none;"><button type="button">LOG IN</button></a>
+        <a href="signup.php" style="text-decoration: none;"><button type="button">SIGN UP</button></a>
         <a href="adminLogin.php"><h1 class="Admin" style="margin-top: -2.5rem;font-size: 15px;
         font-weight: 600;">Login as Admin</h1></a>
     </section>

@@ -6,7 +6,7 @@
 
     $conn = mysqli_connect($server, $user, $password, $db);
     
-
+// admin login php codes
     if(isset($_POST['adminsub']))
     {
         $email = $_POST['email'];
@@ -24,5 +24,21 @@
         else{
             echo "Incorrect email or password";
         }
+    }
+// for the student login php codes
+    if (isset($_POST['studentlogin'])){
+        $id = $_POST['studentid'];
+        $stupswd = $_POST['studentpswd'];
+
+        $alain = "SELECT *FROM `users` WHERE `UserId` = '$id' and `Password` = '$stupswd'";
+        $res = mysqli_query($conn,$alain);
+        $data = mysqli_fetch_assoc($res);
+        if ($data){
+            session_start();
+            $_SESSION['ID'] = $data['UserId'];
+            $_SESSION['name'] = $data['Name'];
+            header('location: userLandingPage.php');
+        }
+
     }
 ?>
