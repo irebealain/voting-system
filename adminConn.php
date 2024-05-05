@@ -20,5 +20,9 @@
             $_SESSION['Email']=$row['Email'];
             header('location:adminDashboard.php');
 
-        }}
+        }
+        else{
+            echo "Incorrect email or password";
+        }
+    }
 ?>
