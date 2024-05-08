@@ -206,14 +206,14 @@ span {
 .rightNavBar {
   display: flex;
   align-items: center;
-  gap: 45rem;
+  gap: 40rem;
   margin-left: 3rem;
   margin-top: 1.5rem;
 }
 .notProf {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 2.5rem;
 }
 
 svg {

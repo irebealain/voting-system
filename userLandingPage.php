@@ -210,7 +210,7 @@ if(!isset($_SESSION['ID'])){
                 <img src="./Assets/Rectangle.png" alt="profile" height="100px" width="100px"
                 style="margin-top: 2rem;">
                 <p style="font-family: 'Poppins', sans-serif; font-weight: 600; color:#EDA246 ;
-                font-style: normal; font-size: 0.8em;">Irebe Gashumba Alain</p>
+                font-style: normal; font-size: 0.8em;"><?php echo $_SESSION['name']; ?></p>
             </div>
             <br>
             <hr>
