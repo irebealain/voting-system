@@ -50,11 +50,11 @@
         // $addPos = "INSERT *INTO `positions` (`Name`) VALUES (`$posName?`)";
         $addPos = "INSERT INTO `positions` (`Name`) VALUES ('$posName')";
         mysqli_query($conn,$addPos);
-        header("location: adminDashboard.php");
+        header("location: adminRepresentativesPage.php");
         
         // $posData = mysqli_fetch_assoc($pos);
     }
-    // submittiming the candidates in the table
+    // submittiming the candidates and fetching them
     if (isset($_POST['addCand'])){
         $candName = $_POST['candName'];
         $choice = $_POST['choose'];
@@ -63,6 +63,7 @@
 
         $createCand = "INSERT INTO `candidate` (`Name`, `Bio`, `Manifesto`, `PositionId`)VALUES ('$candName', '$bio', '$manifest', '$choice')";
         mysqli_query($conn, $createCand);
-        header("location: adminDashboard.php");
+        // $getData = mysqli_fetch_assoc($putData);
+        header("location: adminRepresentativesPage.php");
     }
 ?>

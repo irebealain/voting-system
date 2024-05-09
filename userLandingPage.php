@@ -47,7 +47,7 @@ if(!isset($_SESSION['ID'])){
             
             const typed = new Typed('#typed-text', options);
         </script>
-        <button class="voteBtn">VOTE</button>
+        <a href="votingInterface.php"><button class="voteBtn">VOTE</button></a>
         
         <ul class="slides">
             <input type="radio" name="radio-btn" id="img-1" checked />
