@@ -28,9 +28,6 @@
                             <div class=\"desc\">
                             <p style=\"font-weight: 600;\">Biograpy</p>
                                 <p>" . $row['Bio'] . "</p>
-                                <hr>
-                                <p style=\"font-weight: 600;\">Manifesto</p>
-                                <p>" . $row['Manifesto'] . "</p>
                             </div>
                             <button>VIEW PROFILE</button>
                             <button>VOTE</button>
