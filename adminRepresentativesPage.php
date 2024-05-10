@@ -91,9 +91,10 @@ if(!isset($_SESSION['Email'])){
                     include('adminConn.php');
                     $query = "SELECT * FROM candidate";
                     $record = mysqli_query($conn, $query);
+                    echo "<div class=\"cand1\">";
                     while ($row = mysqli_fetch_assoc($record)) {
                         echo "
-                        <div class=\"cand1\">
+                        
                             <div class=\"profile\">
                                 <img src=\"./Assets/Rectangle.png\" alt=\"\" height=\"100px\" width=\"100px\">
                                 <p style=\"font-weight: 600;\">" . $row['Name'] . "</p>
@@ -101,9 +102,10 @@ if(!isset($_SESSION['Email'])){
                             <div class=\"desc\">
                                 <p>" . $row['Bio'] . "</p>
                             </div>
-                            <button>VIEW PROFILE</button>
-                        </div>";
+                            <button>VIEW PROFILE</button>";
+                        
                     }
+                    echo "</div>";
                 ?>
             </div>
         
