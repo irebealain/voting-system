@@ -100,8 +100,6 @@ if(!isset($_SESSION['Email'])){
                             </div>
                             <div class=\"desc\">
                                 <p>" . $row['Bio'] . "</p>
-                                <hr>
-                                <p>" . $row['Manifesto'] . "</p>
                             </div>
                             <button>VIEW PROFILE</button>
                         </div>";
