@@ -83,29 +83,33 @@ if(!isset($_SESSION['Email'])){
                 </div>
             </div>
             <!-- top representatives -->
-            <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Presidential position</h4>
             
-            <!--  -->
+            <!-- division containg all the candidates -->
             <div class="combinationCandidates">
                 <?php 
                     include('adminConn.php');
-                    $query = "SELECT * FROM candidate";
+                    $query = "SELECT * FROM candidate ORDER BY Name Desc";
                     $record = mysqli_query($conn, $query);
-                    echo "<div class=\"cand1\">";
+                    
                     while ($row = mysqli_fetch_assoc($record)) {
+                        $query = "SELECT Name FROM positions WHERE positionId={$row['PositionId']}";
+                        $record2 = mysqli_query($conn, $query);
+                        $row2 = mysqli_fetch_assoc($record2);
+                    
                         echo "
-                        
+                        <div class=\"cand1\">
                             <div class=\"profile\">
+                                <h4 style=\"font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;\">{$row2['Name']}</h4>
                                 <img src=\"./Assets/Rectangle.png\" alt=\"\" height=\"100px\" width=\"100px\">
-                                <p style=\"font-weight: 600;\">" . $row['Name'] . "</p>
+                                <p style=\"font-weight: 600;\">{$row['Name']}</p>
                             </div>
                             <div class=\"desc\">
-                                <p>" . $row['Bio'] . "</p>
+                                <p>{$row['Bio']}</p>
                             </div>
-                            <button>VIEW PROFILE</button>";
-                        
-                    }
-                    echo "</div>";
+                            <button>VIEW PROFILE</button>
+                        </div>";
+                    }          
+                    
                 ?>
             </div>
         

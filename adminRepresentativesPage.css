@@ -323,6 +323,22 @@ button {
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 185px;
+  background-color: #EDA246;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;    
+  margin-top: 0.6rem;
+}
 /* popup styles */
 #popupBackground{
   position: fixed;
@@ -402,20 +418,4 @@ input:valid ~ label{
   padding: 0 0px 0 5px;
   color: #000;
   margin-top: 21px;
-}
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 185px;
-  background-color: #EDA246;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;    
-  margin-top: 0.6rem;
-  margin-left: 2rem;
 }

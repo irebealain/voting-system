@@ -5,13 +5,21 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.president {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.displayCand {
+    display: grid;
+    /* justify-content: center;
+    
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1rem; */
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2rem;
+    column-gap: 2rem;
+    justify-items: center;
+    
+}
+.president {
+    margin-top: 2rem;
 }
 .cand1 {
     display: flex;

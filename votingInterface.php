@@ -17,12 +17,13 @@
         $record1 = mysqli_query($conn, $query1);
         while($row1 = mysqli_fetch_assoc($record1)){
 
-            echo " <h1 style=\"text-align: center; padding: 1rem 0; font-size: 18px; color: #48805F; font-weight: 600;\">". $row1['Name']."</h1>";
-            echo "<div class=\"president\">";       
+            echo " <h1 style=\"text-align: center; padding: 1rem 0; font-size: 18px; color: #48805F;     margin-top: 5rem; font-weight: 600;\">". $row1['Name']."</h1>";
+            echo "<div class=\"president\">";    
             $query = "SELECT * FROM `candidate` WHERE `positionId` = " . $row1['positionId'];
 
                     $record = mysqli_query($conn, $query);
-                    
+            echo "<div class=\"displayCand\">";
+
                     while ($row = mysqli_fetch_assoc($record)) {
                         echo "
                         
@@ -39,9 +40,11 @@
                             <button>VOTE</button>
                         </div>";
                     }
+                echo "</div>";
                 }
                 ?>
-       
+            
+        </div>
     </div>
 </body>
 </html>
