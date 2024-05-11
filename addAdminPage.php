@@ -101,35 +101,25 @@ if(!isset($_SESSION['Email'])){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>justin@asyv.org</td>
-                            <td>Justin Mutangana</td>
-                            <td>Male</td>
-                            
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>irebalain@gmail.com</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>semazaemmanuel@gmail.com</td>
-                            <td>Emmanuel SEMAZA</td>
-                            <td>Male</td>
-                            
-                        </tr>
+                    <?php
+                    include('adminConn.php');
+                    $query = "SELECT *FROM admin";
+                    $result = mysqli_query($conn, $query);
+
+                    while($ans = mysqli_fetch_assoc($result)){
+                        echo " <tr>";
+                        echo "<td><img src=\"assets/{$ans['ProfileImg']}\" alt=\"admin\" height=\"50px\" width=\"50px\"/></td>";
+                            echo "<td>{$ans['Email']}</td>";
+                            echo "<td>{$ans['Name']}</td>";
+                            echo "<td>{$ans['Gender']}</td>"; 
+                        echo "</tr>";
+            
+                    }
+                ?>
                     </tbody>
                 </table>
             </div>
-            <button>Delete Admin</button>
-
+            <!-- <button type="submit" id="deleteid">Delete Admin</button> -->
         </div>
     </section>
     
@@ -138,24 +128,28 @@ if(!isset($_SESSION['Email'])){
             <div class="container" style="height: 500px; width: 350px;">  
                 <div class="addAdmin">
                     <svg style="position: absolute; cursor: pointer; margin-left: 16rem; top: 1rem; display: inline-block;" onclick="hidePopup()" width="20px" height="20px" viewBox="-133.12 -133.12 778.24 778.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-133.12" y="-133.12" width="778.24" height="778.24" rx="389.12" fill="#eda246" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z"></path></g></svg>
-                    <form action="">
+                    <form action="adminConn.php" method="POST">
                         <h1 style="font-size: 20px; color: #48805F; margin-bottom: -2rem;">Add an Administrator</h1>
                         <div class="inputbox">
-                            <input type="text" required>
+                            <input type="text" name="adminEmail" required>
                             <label for="" id="label">Email Address</label>
                         </div>
                         <div class="inputbox">
-                            <input type="text" required>
+                            <input type="text" name="adminName" required>
                             <label for="" id="label">Names</label>
+                        </div>
+                        <div class="inputbox">
+                            <input type="password" name="adminPswd" required>
+                            <label for="" id="label">Password</label>
                         </div>
                         
                         
                             <label for="" style="font-size: 0.9em;">Gender</label>
                         <div class="gender">
-                            <div class="gender1"><input type="radio"> <label for="">Male</label></div> 
-                            <div class="gender1"><input type="radio"> <label for="">Female</label></div>
+                            <div class="gender1"><input type="radio" value="Male" name="adminGender">Male</div> 
+                            <div class="gender1"><input type="radio" value="Female" name="adminGender">0<label for="">Female</label></div>
                         </div>
-                        <button onclick="hidePopup()">Add</button>
+                        <button onclick="hidePopup()" name="addAdmin">Add</button>
                     </form>
                 </div>
             </div> 

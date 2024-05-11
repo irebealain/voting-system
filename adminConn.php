@@ -66,4 +66,23 @@
         // $getData = mysqli_fetch_assoc($putData);
         header("location: adminRepresentativesPage.php");
     }
+    if (isset($_POST['addAdmin'])){
+        $adminEmail = $_POST['adminEmail'];
+        $adminName = $_POST['adminName'];
+        $adminPswd = $_POST['adminPswd'];
+        $adminGender = $_POST['adminGender'];
+
+        $createAdmin = "INSERT INTO `admin` (`Email`,`Name`,`Password`,`Gender`) VALUES ('$adminEmail','$adminName','$adminPswd','$adminGender')";
+        mysqli_query($conn,$createAdmin);
+        header("location: addAdminPage.php");
+    }
+    // deleting the administrators 
+    if(isset($_GET['deleteid'])){
+        // Sanitize the input
+        $id = mysqli_real_escape_string($conn, $_GET['deleteid']);
+
+        // Execute the DELETE query
+        $sql = "DELETE FROM `admin` WHERE `admin`.`Email` = '$id'";
+        $result = mysqli_query($conn, $sql);
+    }
 ?>

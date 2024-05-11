@@ -60,3 +60,66 @@ button {
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
+.upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about {
+    color: #EDA246;
+    /* border-bottom: 2px #EDA246 solid; */
+    /* margin-bottom: 2rem; */
+}
+
+.lower {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    background-color: #EDA246;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    
+}
+.profilePopUp {
+    width: 100%;
+    max-width: 50%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F5EF;
+    position: relative;
+    border-radius: 30px;
+    overflow-y: scroll;
+    padding: 0 2rem;
+}
+.popUpContainer {
+    display: none;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+svg {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
