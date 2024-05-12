@@ -8,6 +8,21 @@
     <!-- <link rel="stylesheet" href="votingInterface.js"> -->
 </head>
 <body>
+
+<?php 
+    session_start();
+    include('adminConn.php');
+    $qury = "SELECT * FROM votes WHERE `UserId`='{$_SESSION['ID']}'";
+    $r=mysqli_query($conn,$qury);
+    $w=mysqli_fetch_assoc($r);
+    if($w){
+        header('location: congs.php'); 
+    }
+    else{
+
+
+?>
+    <section class='mainContainer'>
     <h1 style="text-align: center; padding: 3rem 0; font-size: 25px; color: #EDA246;">CHOOSE A CANDIDATE</h1>
     
     <h2 style="margin-left: 7rem; font-size: 22px; font-weight: 600; padding-top: 0.6rem;" >Choose you Prefered Candidate</h2>
@@ -50,7 +65,7 @@
 
             echo " <h1 style=\"text-align: center; padding: 1rem 0; font-size: 18px; color: #48805F;     margin-top: 5rem; font-weight: 600;\">". $row1['Name']."</h1>";
             echo "<div class=\"president\">";    
-            $query = "SELECT * FROM `candidate` WHERE `positionId` = " . $row1['positionId'];
+            $query = "SELECT * FROM `candidate` WHERE `PositionId` = " . $row1['positionId'];
 
                     $record = mysqli_query($conn, $query);
             echo "<div class=\"displayCand\">";
@@ -67,8 +82,7 @@
                                 <p>" . $row['Bio'] . "</p>
                             </div>
                             <button onclick=\"showPopUp()\">VIEW PROFILE</button>
-                            <input type=\"hidden\" value=".$row['CandidateId']" name=". $row['CandidateId']."/>
-                            <input type= \"radio\" value=".$row['positionId']" name=". $row1['positionId'].">
+                            <input type= \"radio\" value=".$row['CandidateId']." name=". $row1['positionId']." required>
                         </div>";
                     }
                 echo "</div>";
@@ -79,6 +93,8 @@
             
         </div>
     </div>
+    </section>
+    <?php  }?>
     <script>
         function showPopUp() {
             const popUp = document.getElementById('show');

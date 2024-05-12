@@ -123,3 +123,9 @@ svg {
     top: 2rem;
     right: 2rem;
 }
+.voted {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

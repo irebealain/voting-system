@@ -16,6 +16,7 @@
         $row=mysqli_fetch_assoc($result);
         if($row){    
             session_start();
+            // $_SESSION['voter_id']=$row['UserId'];
             $_SESSION['name']=$row['Name'];
             $_SESSION['Email']=$row['Email'];
             header('location:adminDashboard.php');

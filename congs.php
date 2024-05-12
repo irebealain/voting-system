@@ -20,7 +20,7 @@
             <div class="img_div"><span></span></div>
             <div class="image"><span></span></div>
             <img src=".\Assets\female student with notebooks.png" alt="Student" height="150px" class="img">
-            <button>BACK TO HOME</button>
+            <a href="front.php"><button>BACK TO HOME</button></a>
         </div>
     </div>
 </body>

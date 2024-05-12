@@ -314,7 +314,22 @@ tbody tr:nth-child(odd) td {
   margin-left: 3rem;
   /* margin-right: 1rem; */
 }
-.notifications::after {
-  content: '6';
-  
+.notProf::before {
+    content: '6';
+    display: flex;
+    border-radius: 100%;
+    background-color: rgb(243, 116, 116);
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 0.5rem;
+    font-size: 0.8rem;
+    color: white;
+    right: 8.3rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.notProf {
+  position: relative !important;
 }
