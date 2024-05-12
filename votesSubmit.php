@@ -1,10 +1,7 @@
 <?php 
 session_start();
 include ('adminConn.php');
-
-$votes=array();
 if (isset($_POST['submitVotes'])){
-    $votes=$_POST;
     $sqr="SELECT *FROM positions";
     $rec=mysqli_query($conn,$sqr);
     while($data=mysqli_fetch_assoc($rec)){
