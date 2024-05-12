@@ -45,6 +45,7 @@
         include('adminConn.php');
         $query1 = "SELECT *FROM positions";
         $record1 = mysqli_query($conn, $query1);
+        echo "<form action=\"votesSubmit.php\" method=\"POST\">";
         while($row1 = mysqli_fetch_assoc($record1)){
 
             echo " <h1 style=\"text-align: center; padding: 1rem 0; font-size: 18px; color: #48805F;     margin-top: 5rem; font-weight: 600;\">". $row1['Name']."</h1>";
@@ -56,7 +57,6 @@
 
                     while ($row = mysqli_fetch_assoc($record)) {
                         echo "
-                        
                         <div class=\"cand1\" style=\"padding: 0 1rem;\">
                             <div class=\"profile\">
                                 <img src=\"./Assets/Rectangle.png\" alt=\"\" height=\"100px\" width=\"100px\">
@@ -67,11 +67,14 @@
                                 <p>" . $row['Bio'] . "</p>
                             </div>
                             <button onclick=\"showPopUp()\">VIEW PROFILE</button>
-                            <button>VOTE</button>
+                            <input type=\"hidden\" value=".$row['CandidateId']" name=". $row['CandidateId']."/>
+                            <input type= \"radio\" value=".$row['positionId']" name=". $row1['positionId'].">
                         </div>";
                     }
                 echo "</div>";
                 }
+                echo "<button type=\"submit\" name=\"submitVotes\">SUBMIT</button>";
+                echo "</form>";
                 ?>
             
         </div>

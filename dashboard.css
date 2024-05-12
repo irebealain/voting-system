@@ -314,3 +314,7 @@ tbody tr:nth-child(odd) td {
   margin-left: 3rem;
   /* margin-right: 1rem; */
 }
+.notifications::after {
+  content: '6';
+  
+}
