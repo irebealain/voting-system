@@ -19,12 +19,11 @@
         header('location: congs.php'); 
     }
     else{
-
+        echo "<h1>Hello put name here</h1>";
 
 ?>
     <section class='mainContainer'>
     <h1 style="text-align: center; padding: 3rem 0; font-size: 25px; color: #EDA246;">CHOOSE A CANDIDATE</h1>
-    
     <h2 style="margin-left: 7rem; font-size: 22px; font-weight: 600; padding-top: 0.6rem;" >Choose you Prefered Candidate</h2>
     <div class="popUpContainer" id="show">
     <div class="profilePopUp">
@@ -58,16 +57,26 @@
     <div class="candCont">
         <?php 
         include('adminConn.php');
-        $query1 = "SELECT *FROM positions";
+        $levels=$_SESSION['Level'];
+
+    if($levels==11){
+        $query1 = "SELECT * FROM positions WHERE (positionId = 7 OR positionId = 8)";
+    }else{
+
+        $query1 = "SELECT * FROM positions WHERE NOT (positionId = 7 OR positionId = 8)";
+    }
         $record1 = mysqli_query($conn, $query1);
         echo "<form action=\"votesSubmit.php\" method=\"POST\">";
         while($row1 = mysqli_fetch_assoc($record1)){
-
-            echo " <h1 style=\"text-align: center; padding: 1rem 0; font-size: 18px; color: #48805F;     margin-top: 5rem; font-weight: 600;\">". $row1['Name']."</h1>";
+            
+                echo " <h1 style=\"text-align: center; padding: 1rem 0; font-size: 18px; color: #48805F; margin-top: 5rem; font-weight: 600;\">". $row1['Name']."</h1>";
             echo "<div class=\"president\">";    
             $query = "SELECT * FROM `candidate` WHERE `PositionId` = " . $row1['positionId'];
 
                     $record = mysqli_query($conn, $query);
+                   
+
+                    
             echo "<div class=\"displayCand\">";
 
                     while ($row = mysqli_fetch_assoc($record)) {
@@ -85,10 +94,13 @@
                             <input type= \"radio\" value=".$row['CandidateId']." name=". $row1['positionId']." required>
                         </div>";
                     }
+              
                 echo "</div>";
+           
                 }
                 echo "<button type=\"submit\" name=\"submitVotes\">SUBMIT</button>";
                 echo "</form>";
+
                 ?>
             
         </div>

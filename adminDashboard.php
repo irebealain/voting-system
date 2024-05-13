@@ -128,7 +128,7 @@ if(!isset($_SESSION['Email'])){
             <!-- statistics -->
             <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Overview Statistics</h4>
             <div class="statisticsCart">
-            <div id="drawPieChart">ddd</div>
+            <div id="piechart_3d_2"></div>
             </div>
             <!-- table overview -->
             <div class="table-container">
@@ -143,120 +143,37 @@ if(!isset($_SESSION['Email'])){
                             <th>Family</th>
                             <th>Grade</th>
                             <th>Class</th>
+                            <th>Candidate</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
+                    <?php
+include('adminConn.php');
+$disq = "SELECT users.Name as 'VOTER NAME', users.UserId as 'REG NO', users.Gender as 'Gender', users.Family as 'Family', users.Grade as 'Grade', users.Class as 'Class', candidate.Name as 'Candidaten'
+          FROM users
+          INNER JOIN votes ON votes.UserId = users.UserId 
+          INNER JOIN candidate ON candidate.CandidateId = votes.CandidateId";
+
+$recorquery = mysqli_query($conn, $disq);
+while ($disp8 = mysqli_fetch_assoc($recorquery)) {
+    echo "
+    <tr>
+        <td><img src='./Assets/Rectangle.png' alt='' style='height: 45px; width: 45px;'></td>
+        <td>" . $disp8['REG NO'] . "</td>
+        <td>" . $disp8['VOTER NAME'] . "</td>
+        <td>" . $disp8['Gender'] . "</td>
+        <td>" . $disp8['Family'] . "</td>
+        <td>" . $disp8['Grade'] . "</td>
+        <td>" . $disp8['Class'] . "</td>
+        <td>" . $disp8['Candidaten'] . "</td>
+        <td style='color: #EDA246;'>Voted</td>
+    </tr>
+    ";
+}
+?>
+
+
                     </tbody>
                 </table>
             </div>
@@ -264,7 +181,7 @@ if(!isset($_SESSION['Email'])){
     </section>
     
 <!--  this is for chart to load very fast -->
-<div id="PieCharts">ddd</div>
+<!-- <div id="PieCharts">ddd</div> -->
 <script>
     // Function to draw a pie chart
     function drawPieChart(containerId, data) {
@@ -366,29 +283,30 @@ if(!isset($_SESSION['Email'])){
         }
     </script>
     < bar chart -->
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-    <script type="text/javascript">
-        // google.charts.load("current", {packages:["corechart"]});
-        // google.charts.setOnLoadCallback(drawChart);
-        // function drawChart() {
-        // var data = google.visualization.arrayToDataTable([
-        //     ['Candidate', 'Number of Votes'],
-        //     ['Voted Student',     130],
-        //     ['Non Voted Students',      70],
-        //     // ['Semaza Emmanuel',  304]
-        //     // ['Watch TV', 2],
-        //     // ['Sleep',    7]
-        // ]);
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Candidate', 'Number of Votes'],
+        ['Voted Student',     130],
+        ['Non Voted Students',      70],
+        // ['Semaza Emmanuel',  304]
+        // ['Watch TV', 2],
+        // ['Sleep',    7]
+    ]);
 
-        // var options = {
-        //     title: 'Number of Voted Students',
-        //     titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-        //     is3D: true,
-        // };
+    var options = {
+        title: 'Number of Voted Students',
+        titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
+        is3D: true,
+    };
 
-        // var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        // chart.draw(data, options);
-        // }
-    </script> -->
+    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
+    chart.draw(data, options);
+    }
+</script>
+
 </body>
 </html>

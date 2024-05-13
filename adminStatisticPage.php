@@ -13,422 +13,7 @@ if(!isset($_SESSION['Email'])){
     <link rel="stylesheet" href="adminStatisticPage.css">
     <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
     <!-- Presidential Position -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Butati Lesly',     130],
-            ['John Kelly',      70],
-            ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Presidential Position',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- Vice President position  -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Vice President Position',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- Cabinet Affairs position  -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Cabinet Affairs Position',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_cabinet'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- Forign affairs position  -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Foreign Affairs Position',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_foreign'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- Gender & family Promotion male position  -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Gender & Family Promotion Male',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -5, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_gender_male'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- Gender & family Promotion female position -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Gender & Family Promotion Female',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_gender_female'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- health male -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Health & Wellness Male',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_health_male'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- health female -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Health & Wellness Female',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_health_female'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- education male -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Education Position Male',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_education_male'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- education female -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Education Position Female',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_education_female'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- sports & culture -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Sports & Culture Male',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_sports_male'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- sports female -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Sports & Culture Female',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_sports_female'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- Juniors & Clubs/ initiatives -->
-
-    <!-- clubs initiative -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Clubs & Initiatives Position',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_clubs'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- juinors male -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Junior Position Male',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_juniors_male'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- juniors female -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Junior Position Female',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_juniors_female'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- clubs and communications -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Communication Position',
-            pieHole: 0.5,
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_communication'));
-        chart.draw(data, options);
-        }
-    </script>
+    
     <title>Statistics</title>
 </head>
 <body>
@@ -496,39 +81,81 @@ if(!isset($_SESSION['Email'])){
             </div>
             <!-- statistics -->
             <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Detailed Statistics</h4>
-            <div class="statisticsCart">
-                <div id="piechart_3d_2" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_3d" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
+            
+            <div id="chart_container" class='chart-card'>
+               
             </div>
-            <div class="statisticsCart">
-                <div id="piechart_cabinet" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_foreign" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
-            <div class="statisticsCart">
-                <div id="piechart_gender_male" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_gender_female" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
-            <div class="statisticsCart">
-                <div id="piechart_health_male" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_health_female" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
-            <div class="statisticsCart">
-                <div id="piechart_sports_male" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_sports_female" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
-            <div class="statisticsCart">
-                <div id="piechart_education_male" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_education_female" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
-            <div class="statisticsCart">
-                <div id="piechart_juniors_male" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_juniors_female" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
-            <div class="statisticsCart">
-                <div id="piechart_clubs" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_communication" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-            </div>
+           
         </div>
     </section>
+
+  <!-- This is to fetch for statisitic -->
+
+<?php
+include('adminConn.php');
+
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM positions";
+$query = $conn->query($sql);
+
+while($row = $query->fetch_assoc()){
+    $sql = "SELECT * FROM candidate WHERE PositionId = '".$row['positionId']."'";
+    $cquery = $conn->query($sql);
+    $data = array();
+
+    if($cquery) {
+        while($crow = $cquery->fetch_assoc()){
+            $fullName = $crow['Name'];
+
+            $sql = "SELECT * FROM votes WHERE CandidateId = '".$crow['CandidateId']."'";
+            $vquery = $conn->query($sql);
+            $voteCount = $vquery->num_rows;
+
+            array_push($data, array($fullName, $voteCount));
+        }
+
+        $chartData = json_encode($data);
+
+        ?>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(function() {
+                drawChart('<?php echo $row['Name']; ?>', <?php echo $chartData; ?>);
+            });
+            
+            function drawChart(description, chartData) {
+                var container = document.createElement('div');
+                container.id =description;
+                document.getElementById('chart_container').appendChild(container);
+
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Candidate');
+                data.addColumn('number', 'Votes');
+                data.addRows(chartData);
+
+                var options = {
+                    title: description,
+                    pieHole: 0.4,
+                    colors: ['blue', 'red', 'maroon', 'green', 'brown', 'cyan'],
+                };
+
+                var chart = new google.visualization.PieChart(container);
+                chart.draw(data, options);
+            }
+        </script>
+        <?php
+    } else {
+        echo "Error: " . $conn->error;
+    }
+}
+?>
+
+
 </body>
 </html>

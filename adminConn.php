@@ -39,6 +39,7 @@
             $_SESSION['ID'] = $data['UserId'];
             $_SESSION['name'] = $data['Name'];
             $_SESSION['family'] = $data['Name'];
+            $_SESSION['Level']=$data['level'];
             header('location: welcomeSuccessfully.php');
         }
 
