@@ -13,53 +13,7 @@ if(!isset($_SESSION['Email'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
     <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Butati Lesly',     130],
-            ['John Kelly',      70],
-            ['Semaza Emmanuel',  304]
-        ]);
-
-        var options = {
-            title: 'Presidential Position',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- bar chart -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Number of Voted Students',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        chart.draw(data, options);
-        }
-    </script>
+    
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -132,62 +86,49 @@ if(!isset($_SESSION['Email'])){
             <!-- top representatives -->
             <h4 style="margin-left: 2rem; margin-left: 3rem; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Top representatives</h4>
             <div class="repCarts">
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
+                <?php 
+                 include('adminConn.php');
+                 $rep="SELECT *FROM `candidate` ORDER BY PositionId asc";
+                 $rep0 = mysqli_query($conn,$rep);
+                 while ($r=mysqli_fetch_assoc($rep0)) {
+                    $CandidateId=$r['CandidateId'];
+                    $PositionId=$r['PositionId'];
+                    $v="SELECT *FROM votes WHERE `CandidateId`=$CandidateId";
+                    $t="SELECT `Name` FROM `positions` WHERE positionId=$PositionId";
+                    $t0=mysqli_query($conn,$t);
+                    $t1=mysqli_fetch_assoc($t0);
+                    // to count total votes for each position
+                    $tv="SELECT *FROM votes WHERE PositionId=$PositionId";
+                    $tv0=mysqli_query($conn,$tv);
+                    $tv1=mysqli_fetch_assoc($tv0);
+                    $a=mysqli_query($conn,$v);
+                    $res=mysqli_fetch_assoc($a);
+                    if($res){
+                        $n_votes=mysqli_num_rows($a);
+                        $to_votes=mysqli_num_rows($tv0);
+                        $percentage =( ($n_votes/$to_votes)*100);
+        echo "
+            <div class=\"cart\">
+                <h2 style='font-family: \"Poppins\", sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;'>{$r['Name']}</h2>
+                <p style='font-size: 0.9em; color: #EDA246; margin-top: -0.6rem;'>{$t1['Name']}</p>
+                <div class=\"perProf\">
+                    <h1 style='font-size: 2.7rem; color: #CCC6B4;'>$percentage%</h1>
+                    <img src='./Assets/Rectangle (1).png' alt='profile pic' height='70px' width='70px'>
                 </div>
+            </div><br>";
+                    }
+                 }
+
+
+                ?>
+                
                 <!-- second candidate -->
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <!-- second candidate -->
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
+                
             </div>
             <!-- statistics -->
             <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Overview Statistics</h4>
             <div class="statisticsCart">
-                <div id="piechart_3d_2" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_3d" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
+            <div id="drawPieChart">ddd</div>
             </div>
             <!-- table overview -->
             <div class="table-container">
@@ -321,5 +262,133 @@ if(!isset($_SESSION['Email'])){
             </div>
         </div>
     </section>
+    
+<!--  this is for chart to load very fast -->
+<div id="PieCharts">ddd</div>
+<script>
+    // Function to draw a pie chart
+    function drawPieChart(containerId, data) {
+        const container = document.getElementById(containerId);
+
+        // Create a canvas element for the pie chart
+        const canvas = document.createElement('canvas');
+        canvas.width = 400;
+        canvas.height = 400;
+        container.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+
+        const total = data.reduce((acc, dataPoint) => acc + parseInt(dataPoint.value), 0);
+        let startAngle = 0;
+
+        // Draw the pie chart
+        data.forEach(dataPoint => {
+            const sliceAngle = (parseInt(dataPoint.value) / total) * 2 * Math.PI;
+
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, canvas.height / 2);
+            ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, startAngle, startAngle + sliceAngle);
+            ctx.fillStyle = dataPoint.color;
+            ctx.fill();
+
+            startAngle += sliceAngle;
+        });
+    }
+
+    // Fetch data from the database using PHP
+    <?php
+        // Include database connection file
+        include('adminConn.php');
+
+        // Check database connection
+        if ($mysqli->connect_errno) {
+            echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+            exit();
+        }
+
+        // Fetch data from the database
+        $result = $mysqli->query("SELECT 
+            candidate.Name, 
+            COUNT(votes.CandidateId) AS vote_count,
+            (COUNT(votes.CandidateId) / total_votes.total * 100) AS percentage
+        FROM 
+            candidate 
+        INNER JOIN 
+            votes ON candidate.CandidateId = votes.CandidateId
+        INNER JOIN 
+            (SELECT PositionId, COUNT(*) AS total FROM votes GROUP BY PositionId) AS total_votes 
+            ON votes.PositionId = total_votes.PositionId
+        GROUP BY 
+            candidate.Name, votes.PositionId");
+
+        // Check for errors in the database query
+        if (!$result) {
+            echo "Error: " . $mysqli->error;
+            exit();
+        }
+
+        // Loop through the result set and draw pie charts
+        while ($row = $result->fetch_assoc()) {
+            // Assuming that 'value' and 'color' are fields in the database
+            $data = array(
+                array('value' => $row['vote_count'], 'color' => 'blue'),
+                // Add more data points as needed
+            );
+            echo "drawPieChart('PieCharts', " . json_encode($data) . ");";
+        }
+
+        // Close database connection
+        $mysqli->close();
+    ?>
+</script>
+
+    <!-- javascript -->
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Candidate', 'Number of Votes'],
+            ['Butati Lesly',     130],
+            ['John Kelly',      70],
+            ['Semaza Emmanuel',  304]
+        ]);
+
+        var options = {
+            title: 'Presidential Position',
+            titleTextStyle: { color: '#48805F', fontSize: 20, marginTop: 0 },
+            is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+        }
+    </script>
+    < bar chart -->
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+    <script type="text/javascript">
+        // google.charts.load("current", {packages:["corechart"]});
+        // google.charts.setOnLoadCallback(drawChart);
+        // function drawChart() {
+        // var data = google.visualization.arrayToDataTable([
+        //     ['Candidate', 'Number of Votes'],
+        //     ['Voted Student',     130],
+        //     ['Non Voted Students',      70],
+        //     // ['Semaza Emmanuel',  304]
+        //     // ['Watch TV', 2],
+        //     // ['Sleep',    7]
+        // ]);
+
+        // var options = {
+        //     title: 'Number of Voted Students',
+        //     titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
+        //     is3D: true,
+        // };
+
+        // var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
+        // chart.draw(data, options);
+        // }
+    </script> -->
 </body>
 </html>

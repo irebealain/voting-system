@@ -244,8 +244,8 @@ svg::after {
 }
 .repCarts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust the min and max width as needed */
+  grid-auto-rows: minmax(100px, auto);
   row-gap: 2rem;
   margin-top: 2rem;
   width: 100%;
