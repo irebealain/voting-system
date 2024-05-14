@@ -87,10 +87,10 @@ if(!isset($_SESSION['Email'])){
             <h4 style="margin-left: 2rem; margin-left: 3rem; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Top representatives</h4>
             <div class="repCarts">
                 <?php 
-                 include('adminConn.php');
-                 $rep="SELECT *FROM `candidate` ORDER BY PositionId asc";
-                 $rep0 = mysqli_query($conn,$rep);
-                 while ($r=mysqli_fetch_assoc($rep0)) {
+                include('adminConn.php');
+                $rep="SELECT *FROM `candidate` ORDER BY PositionId asc";
+                $rep0 = mysqli_query($conn,$rep);
+                while ($r=mysqli_fetch_assoc($rep0)) {
                     $CandidateId=$r['CandidateId'];
                     $PositionId=$r['PositionId'];
                     $v="SELECT *FROM votes WHERE `CandidateId`=$CandidateId";
@@ -117,7 +117,7 @@ if(!isset($_SESSION['Email'])){
                 </div>
             </div><br>";
                     }
-                 }
+                }
 
 
                 ?>
@@ -151,9 +151,9 @@ if(!isset($_SESSION['Email'])){
                     <?php
 include('adminConn.php');
 $disq = "SELECT users.Name as 'VOTER NAME', users.UserId as 'REG NO', users.Gender as 'Gender', users.Family as 'Family', users.Grade as 'Grade', users.Class as 'Class', candidate.Name as 'Candidaten'
-          FROM users
-          INNER JOIN votes ON votes.UserId = users.UserId 
-          INNER JOIN candidate ON candidate.CandidateId = votes.CandidateId";
+        FROM users
+        INNER JOIN votes ON votes.UserId = users.UserId 
+        INNER JOIN candidate ON candidate.CandidateId = votes.CandidateId";
 
 $recorquery = mysqli_query($conn, $disq);
 while ($disp8 = mysqli_fetch_assoc($recorquery)) {
@@ -172,8 +172,6 @@ while ($disp8 = mysqli_fetch_assoc($recorquery)) {
     ";
 }
 ?>
-
-
                     </tbody>
                 </table>
             </div>
@@ -220,7 +218,7 @@ $chartData = json_encode($data);
     google.charts.setOnLoadCallback(function() {
         drawChart(<?php echo $chartData; ?>);
     });
-   
+
     function drawChart(chartData) {
         var container = document.createElement('div');
         container.id = 'chart_container';
