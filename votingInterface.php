@@ -98,7 +98,7 @@
                 I would describe myself as an open and honest person who doesn't believe in misleading <br>
                 other people and tries to be fair in everything I do.</p>
         </div>
-        <button>VOTE</button>
+        <button onclick="hidePop()">Back</button>
     </div>
     </div>
     </div>
