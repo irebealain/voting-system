@@ -39,6 +39,9 @@ if(!isset($_SESSION['Email'])){
                     <a href="adminRepresentativesPage.php"><p>Candidates</p></a>
                     </div>
                     </li>
+                <li>
+                    
+                    </li>
                     <!-- students -->
                     <li>
                         <div class="navigationLinks">
@@ -128,7 +131,7 @@ if(!isset($_SESSION['Email'])){
             <!-- statistics -->
             <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Overview Statistics</h4>
             <div class="statisticsCart">
-            <div id="piechart_3d_2"></div>
+            <div id="piechartVoters"></div>
             </div>
             <!-- table overview -->
             <div class="table-container">
@@ -181,130 +184,67 @@ while ($disp8 = mysqli_fetch_assoc($recorquery)) {
     </section>
     
 <!--  this is for chart to load very fast -->
-<!-- <div id="PieCharts">ddd</div> -->
-<script>
-    // Function to draw a pie chart
-    function drawPieChart(containerId, data) {
-        const container = document.getElementById(containerId);
 
-        // Create a canvas element for the pie chart
-        const canvas = document.createElement('canvas');
-        canvas.width = 400;
-        canvas.height = 400;
-        container.appendChild(canvas);
+<?php
+include('adminConn.php');
 
-        const ctx = canvas.getContext('2d');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-        const total = data.reduce((acc, dataPoint) => acc + parseInt(dataPoint.value), 0);
-        let startAngle = 0;
+// Get total number of voters
+$sql_total_voters = "SELECT COUNT(*) as total_voters FROM users";
+$result_total_voters = mysqli_query($conn, $sql_total_voters);
+$row_total_voters = mysqli_fetch_assoc($result_total_voters);
+$total_voters = $row_total_voters['total_voters'];
 
-        // Draw the pie chart
-        data.forEach(dataPoint => {
-            const sliceAngle = (parseInt(dataPoint.value) / total) * 2 * Math.PI;
+// Get number of votes
+$sql_votes = "SELECT COUNT(*) as total_votes FROM votes";
+$result_votes = mysqli_query($conn, $sql_votes);
+$row_votes = mysqli_fetch_assoc($result_votes);
+$total_votes = $row_votes['total_votes'];
 
-            ctx.beginPath();
-            ctx.moveTo(canvas.width / 2, canvas.height / 2);
-            ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, startAngle, startAngle + sliceAngle);
-            ctx.fillStyle = dataPoint.color;
-            ctx.fill();
+// Calculate number of people who did not vote
+$not_voted = $total_voters - $total_votes;
 
-            startAngle += sliceAngle;
-        });
-    }
+// Create data array
+$data = array(
+    "total_votes" => $total_votes,
+    "not_voted" => $not_voted
+);
 
-    // Fetch data from the database using PHP
-    <?php
-        // Include database connection file
-        include('adminConn.php');
+// Encode data as JSON
+$chartData = json_encode($data);
+?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(function() {
+        drawChart(<?php echo $chartData; ?>);
+    });
+   
+    function drawChart(chartData) {
+        var container = document.createElement('div');
+        container.id = 'chart_container';
+        document.getElementById('piechartVoters').appendChild(container);
 
-        // Check database connection
-        if ($mysqli->connect_errno) {
-            echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-            exit();
-        }
-
-        // Fetch data from the database
-        $result = $mysqli->query("SELECT 
-            candidate.Name, 
-            COUNT(votes.CandidateId) AS vote_count,
-            (COUNT(votes.CandidateId) / total_votes.total * 100) AS percentage
-        FROM 
-            candidate 
-        INNER JOIN 
-            votes ON candidate.CandidateId = votes.CandidateId
-        INNER JOIN 
-            (SELECT PositionId, COUNT(*) AS total FROM votes GROUP BY PositionId) AS total_votes 
-            ON votes.PositionId = total_votes.PositionId
-        GROUP BY 
-            candidate.Name, votes.PositionId");
-
-        // Check for errors in the database query
-        if (!$result) {
-            echo "Error: " . $mysqli->error;
-            exit();
-        }
-
-        // Loop through the result set and draw pie charts
-        while ($row = $result->fetch_assoc()) {
-            // Assuming that 'value' and 'color' are fields in the database
-            $data = array(
-                array('value' => $row['vote_count'], 'color' => 'blue'),
-                // Add more data points as needed
-            );
-            echo "drawPieChart('PieCharts', " . json_encode($data) . ");";
-        }
-
-        // Close database connection
-        $mysqli->close();
-    ?>
-</script>
-
-    <!-- javascript -->
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Butati Lesly',     130],
-            ['John Kelly',      70],
-            ['Semaza Emmanuel',  304]
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Data');
+        data.addColumn('number', 'Value');
+        data.addRows([
+            ['Total Votes', parseInt(chartData.total_votes)],
+            ['Not Voted', parseInt(chartData.not_voted)]
         ]);
 
         var options = {
-            title: 'Presidential Position',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginTop: 0 },
-            is3D: true,
+            title: 'Voting Statistics',
+            pieHole: 0.4,
+            colors: ['green', 'red'],
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        var chart = new google.visualization.PieChart(container);
         chart.draw(data, options);
-        }
-    </script>
-    < bar chart -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-        ['Candidate', 'Number of Votes'],
-        ['Voted Student',     130],
-        ['Non Voted Students',      70],
-        // ['Semaza Emmanuel',  304]
-        // ['Watch TV', 2],
-        // ['Sleep',    7]
-    ]);
-
-    var options = {
-        title: 'Number of Voted Students',
-        titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-        is3D: true,
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-    chart.draw(data, options);
     }
 </script>
 
