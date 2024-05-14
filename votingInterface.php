@@ -6,12 +6,55 @@
     <title>Votting Interface</title>
     <link rel="stylesheet" href="votingInterface.css">
     <!-- <link rel="stylesheet" href="votingInterface.js"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation bar styles */
+        nav {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            width: 50px; /* Adjust according to your logo size */
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logout {
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
 <?php 
     session_start();
     include('adminConn.php');
+    if(!ISSET($_SESSION['ID'])){
+        header('location:front.php');
+    }
     $qury = "SELECT * FROM votes WHERE `UserId`='{$_SESSION['ID']}'";
     $r=mysqli_query($conn,$qury);
     $w=mysqli_fetch_assoc($r);
@@ -19,7 +62,12 @@
         header('location: congs.php'); 
     }
     else{
-        echo "<h1>Hello put name here</h1>";
+        echo "<nav>
+        <img src='.\Assets\Agahozo+Shalom+Logo.png' alt='Logo' class='logo'>
+        <div class='nav-brand'>{$_SESSION['name']}</div>
+        <a href='front.php' class='logout'>Logout</a>
+    </nav>";
+
 
 ?>
     <section class='mainContainer'>
@@ -59,7 +107,7 @@
         include('adminConn.php');
         $levels=$_SESSION['Level'];
 
-    if($levels==11){
+    if($levels==111){
         $query1 = "SELECT * FROM positions WHERE (positionId = 7 OR positionId = 8)";
     }else{
 
@@ -83,7 +131,7 @@
                         echo "
                         <div class=\"cand1\" style=\"padding: 0 1rem;\">
                             <div class=\"profile\">
-                                <img src=\"./Assets/Rectangle.png\" alt=\"\" height=\"100px\" width=\"100px\">
+                            <img src=\"./Assets/candimages/{$row['candimages']}\" alt=\"\" height=\"100px\" width=\"100px\">
                                 <p style=\"font-weight: 600;\">" . $row['Name'] . "</p>
                             </div>
                             <div class=\"desc\">
@@ -98,7 +146,12 @@
                 echo "</div>";
            
                 }
-                echo "<button type=\"submit\" name=\"submitVotes\">SUBMIT</button>";
+                
+                    echo "<div style='text-align: center; float:right'>"; // Start a container with center alignment
+                    echo "<button type=\"submit\" name=\"submitVotes\">SUBMIT</button>";
+                    echo "</div>"; // End of the container
+
+
                 echo "</form>";
 
                 ?>

@@ -62,8 +62,14 @@
         $choice = $_POST['choose'];
         $bio = $_POST['biograph'];
         $manifest = $_POST['manifesto'];
+        $cimage = $_FILES['cimage']['name'];
+        $directory = "Assets/candimages/";
 
-        $createCand = "INSERT INTO `candidate` (`Name`, `Bio`, `Manifesto`, `PositionId`)VALUES ('$candName', '$bio', '$manifest', '$choice')";
+        if (!empty($cimage)) {
+            move_uploaded_file($_FILES['cimage']['tmp_name'], $directory . basename($cimage));
+        }
+
+        $createCand = "INSERT INTO `candidate` (`Name`, `Bio`, `Manifesto`, `PositionId`,`candimages`)VALUES ('$candName', '$bio', '$manifest', '$choice','$cimage')";
         mysqli_query($conn, $createCand);
         // $getData = mysqli_fetch_assoc($putData);
         header("location: adminRepresentativesPage.php");

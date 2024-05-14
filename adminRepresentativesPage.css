@@ -300,6 +300,10 @@ svg::after {
     align-items: center;
     gap: 20px;
 }
+.profile > img {
+    border-radius: 50%;
+   
+}
 .desc {
     display: flex;
     flex-direction: column;
@@ -362,11 +366,12 @@ button {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+
 }
 .container{
   position: relative;
   width: 300px;
-  height: 400px;
+  height: 500px;
   background: white;
   border: 2px solid rgba(134, 124, 124, 0.5);
   border-radius: 45px;
@@ -388,8 +393,9 @@ button {
   }
 }
 .inputbox{
+  
   position: relative;
-  margin: 24px 0;
+  margin: 10px 0;
   width: 240px;
   border-bottom: 1.5px solid rgb(134 124 124);
 }

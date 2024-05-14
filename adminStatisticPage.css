@@ -330,9 +330,9 @@ tbody tr:nth-child(odd) td {
 #chart_container > div {
   flex: 1;
   background-color: lightgrey;
-  min-width: 30%; /* Each inner div takes at least 30% of the width */
-  max-width: 30%; /* Each inner div takes at most 30% of the width */
-  margin-right: 1rem; /* Add right margin for spacing */
+  min-width: 32%; /* Each inner div takes at least 30% of the width */
+  max-width: 32%; /* Each inner div takes at most 30% of the width */
+  margin-right: 0.5rem; /* Add right margin for spacing */
   margin-bottom: 1rem; /* Add right margin for spacing */
   border-radius: 3rem;
 }

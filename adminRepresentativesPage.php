@@ -100,7 +100,7 @@ if(!isset($_SESSION['Email'])){
                         <div class=\"cand1\">
                             <div class=\"profile\">
                                 <h4 style=\"font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;\">{$row2['Name']}</h4>
-                                <img src=\"./Assets/Rectangle.png\" alt=\"\" height=\"100px\" width=\"100px\">
+                                <img src=\"./Assets/candimages/{$row['candimages']}\" alt=\"\" height=\"100px\" width=\"100px\">
                                 <p style=\"font-weight: 600;\">{$row['Name']}</p>
                             </div>
                             <div class=\"desc\">
@@ -138,11 +138,16 @@ if(!isset($_SESSION['Email'])){
     <div class="container" style="height: 500px; width: 350px;">  
         <div class="addCand">
             <svg onclick="hidePopup()" style="position: absolute; cursor: pointer; margin-left: 16rem; top: 1rem; display: inline-block;" onclick="hidePop()" width="20px" height="20px" viewBox="-133.12 -133.12 778.24 778.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-133.12" y="-133.12" width="778.24" height="778.24" rx="389.12" fill="#eda246" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z"></path></g></svg>
-            <form action="adminConn.php" method="POST">
+            <form action="adminConn.php" method="POST" enctype="multipart/form-data">
                 <h1 style="font-size: 20px; color: #48805F;">Add a Candidate</h1>
                 <div class="inputbox">
                     <input type="text" name="candName" required>
                     <label for="" id="label">Name of Candidate</label>
+                </div>
+                <div class="inputbox">
+                
+                    <input type="file" name="cimage" accept="image/*" required>
+                    
                 </div>
                 <div class="pos">
                 <select name="choose">

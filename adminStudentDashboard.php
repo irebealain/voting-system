@@ -81,7 +81,8 @@ if(!isset($_SESSION['Email'])){
                 
             <!-- table overview -->
             <div class="table-container">
-                <table>
+            <input type="text" id="searchBox" placeholder="Search by Name">
+                <table id="dataTable">
                     <thead>
                         <tr>
                             <th>Profile</th>
@@ -91,120 +92,31 @@ if(!isset($_SESSION['Email'])){
                             <th>Family</th>
                             <th>Grade</th>
                             <th>Class</th>
-                            <th>Status</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
+                    <?php
+include('adminConn.php');
+$disq = "SELECT Name as 'VOTER NAME', UserId as 'REG NO', Gender as 'Gender', Family as 'Family',Grade as 'Grade', Class as 'Class'
+          FROM users";
+
+$recorquery = mysqli_query($conn, $disq);
+while ($disp8 = mysqli_fetch_assoc($recorquery)) {
+    echo "
+    <tr>
+        <td><img src='./Assets/Rectangle.png' alt='' style='height: 45px; width: 45px;'></td>
+        <td>" . $disp8['REG NO'] . "</td>
+        <td>" . $disp8['VOTER NAME'] . "</td>
+        <td>" . $disp8['Gender'] . "</td>
+        <td>" . $disp8['Family'] . "</td>
+        <td>" . $disp8['Grade'] . "</td>
+        <td>" . $disp8['Class'] . "</td>
+        
+    </tr>
+    ";
+}
+?>
                     </tbody>
                 </table>
             </div>
@@ -234,6 +146,42 @@ if(!isset($_SESSION['Email'])){
         function hidePopup(){
             document.getElementById("popBackground").style.display = "none";
         }
+    </script>
+
+<script>
+        // Function to perform the search
+        function searchTable() {
+    // Get input value and convert to lowercase for case-insensitive search
+    var searchText = document.getElementById('searchBox').value.toLowerCase();
+    var table = document.getElementById('dataTable');
+    var rows = table.getElementsByTagName('tr');
+
+    // Loop through all table rows
+    for (var i = 1; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName('td');
+        var found = false;
+
+        // Loop through all cells in the current row
+        for (var j = 0; j < cells.length; j++) {
+            var cellText = cells[j].textContent.toLowerCase();
+            // If the search text is found in any cell, mark as found and break the loop
+            if (cellText.indexOf(searchText) > -1) {
+                found = true;
+                break;
+            }
+        }
+
+        // Show or hide the row based on whether the search text was found
+        if (found) {
+            rows[i].style.display = '';
+        } else {
+            rows[i].style.display = 'none';
+        }
+    }
+}
+
+        // Attach event listener to the search input
+        document.getElementById('searchBox').addEventListener('input', searchTable);
     </script>
 </body>
 </html>
