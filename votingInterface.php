@@ -127,25 +127,27 @@
                     
             echo "<div class=\"displayCand\">";
 
-                    while ($row = mysqli_fetch_assoc($record)) {
-                        echo "
-                        <div class=\"cand1\" style=\"padding: 0 1rem;\">
-                            <div class=\"profile\">
-                            <img src=\"./Assets/candimages/{$row['candimages']}\" alt=\"\" height=\"100px\" width=\"100px\">
-                                <p style=\"font-weight: 600;\">" . $row['Name'] . "</p>
-                            </div>
-                            <div class=\"desc\">
-                            <p style=\"font-weight: 600;\">Biograpy</p>
-                                <p>" . $row['Bio'] . "</p>
-                            </div>
-                            <button onclick=\"showPopUp()\">VIEW PROFILE</button>
-                            <input type= \"radio\" value=".$row['CandidateId']." name=". $row1['positionId']." required>
-                        </div>";
-                    }
-              
-                echo "</div>";
-           
-                }
+            while ($row = mysqli_fetch_assoc($record)) {
+                echo "
+                <div class=\"cand1\" style=\"padding: 0 1rem;\">
+                    <div class=\"profile\">
+                        <img src=\"./Assets/candimages/{$row['candimages']}\" alt=\"\" height=\"100px\" width=\"100px\">
+                        <p style=\"font-weight: 600;\">{$row['Name']}</p>
+                    </div>
+                    <div class=\"desc\">
+                        <p style=\"font-weight: 600;\">Biography</p>
+                        <p>{$row['Bio']}</p>
+                    </div>
+                    <button onclick=\"showPopUp()\">VIEW PROFILE</button>
+                    <label class=\"radio-container\">
+                        <input type= \"radio\" value=\"{$row['CandidateId']}\" name=\"{$row1['positionId']}\" required>
+                        <span class=\"checkmark\"></span>
+                    </label>
+                </div>";
+            }
+            echo "</div>";
+            
+            }
                 
                     echo "<div style='text-align: center; float:right'>"; // Start a container with center alignment
                     echo "<button type=\"submit\" name=\"submitVotes\">SUBMIT</button>";
