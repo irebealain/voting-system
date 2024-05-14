@@ -39,9 +39,6 @@ if(!isset($_SESSION['Email'])){
                     <a href="adminRepresentativesPage.php"><p>Candidates</p></a>
                     </div>
                     </li>
-                <li>
-                    
-                    </li>
                     <!-- students -->
                     <li>
                         <div class="navigationLinks">
