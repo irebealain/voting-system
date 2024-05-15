@@ -6,6 +6,7 @@
     <title>Voting Interface</title>
     <link rel="stylesheet" href="votingInterface.css">
     <!-- <link rel="stylesheet" href="votingInterface.js"> -->
+    
     <style>
         * {
             margin: 0;
