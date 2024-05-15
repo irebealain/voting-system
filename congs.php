@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congulatulations! Your votes are submited</title>
     <link rel="stylesheet" href="congs.css">
+    <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
 </head>
 <body>
     <div class="container">
