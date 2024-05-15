@@ -86,7 +86,7 @@ if(!isset($_SESSION['Email'])){
                 <a href="#"><p onclick="showPopup()" style="font-size: 12px; cursor: pointer;">Add new Admin</p></a>
                 </div>
             </div>
-             
+            
                 
             <!-- table overview -->
             <div class="table-container">

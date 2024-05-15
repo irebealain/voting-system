@@ -131,70 +131,18 @@ if(!isset($_SESSION['ID'])){
     <section class="thirdCandidateDisplay">
         <h5>16 CANDIDATES FOR THE STUDENT REPRESENTATIVES</h5>
         <div class="profiles">
-            <!-- Profiles -->
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
-            <div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div><div class="candidateProfile">
-                <img src="./Assets/Rectangle.png" alt="profile image" style="height: 70px; width: 70px;">
-                <p>Ana pillar</p>
-            </div>
+        <?php 
+            include('adminConn.php');
+            $query1 = "SELECT * FROM candidate";
+            $data = mysqli_query($conn,$query1);
+            while($row1 = mysqli_fetch_assoc($data)){
+                echo"<div class=\"candidateProfile\">";
+                echo"<img src=\"./Assets/{$row1['candimages']}\" alt=\"profile image\" style=\"height: 70px; width: 70px;\">";
+                echo"<p>{$row1['Name']}</p>";
+            echo"</div>";
+            }
+
+        ?>
             <!-- Add more profiles as needed -->
         </div>
     </section>
