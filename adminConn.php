@@ -17,7 +17,7 @@
         if($row){    
             session_start();
             // $_SESSION['voter_id']=$row['UserId'];
-            $_SESSION['name']=$row['Name'];
+            $_SESSION['Names']=$row['Name'];
             $_SESSION['Email']=$row['Email'];
             header('location:adminDashboard.php');
 
@@ -42,7 +42,17 @@
             $_SESSION['Level']=$data['level'];
             header('location: welcomeSuccessfully.php');
         }
-
+    }
+    // for the student sign up
+    if (isset($_POST['signUp'])){
+        $studid = $_POST['studId'];
+        $pswd = $_POST['pswd'];
+        $select = "SELECT *FROM `users` WHERE `UserId` = '$studid'";
+        $send = mysqli_query($conn,$select);
+        $received = mysqli_fetch_assoc($send);
+        $put = "INSERT INTO `users` (`Password`) VALUES ('$pswd')";
+        mysqli_query($conn,$put);
+        header('location: adminRepresentativesPage.php');
     }
     // for changing the name on the successfully creation of account
 

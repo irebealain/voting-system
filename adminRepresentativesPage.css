@@ -290,9 +290,11 @@ svg::after {
     width: 17rem;
     height: 25rem;
     padding: 0.8rem 0;
+    transition: transform 0.3s;
 }
-
-
+.cand1:hover {
+  transform: scale(1.05);
+}
 .profile {
     display: flex;
     flex-direction: column;
