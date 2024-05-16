@@ -158,45 +158,16 @@
     <!-- <h1 style="text-align: center; padding: 3rem 0; font-size: 25px; color: #EDA246;">CHOOSE A CANDIDATE</h1> -->
     <h2 style="margin-left: 3rem; font-size: 32px; color: #48805F;font-weight: 700; padding-top: 2.6rem;
     text-align: center;" >Choose Your Prefered Candidate</h2>
-    <div class="popUpContainer" id="show">
-    <div class="profilePopUp">
-    <svg style="position: absolute; cursor: pointer; margin-left: 14rem; top: 1rem; display: inline-block;" onclick="hidePop()" width="20px" height="20px" viewBox="-133.12 -133.12 778.24 778.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-133.12" y="-133.12" width="778.24" height="778.24" rx="389.12" fill="#eda246" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z"></path></g></svg> 
-    <div class="upper">
-        <img src=".\Assets\Rectangle(2).png" alt="" height="100px" width="100px">
-        <h1 style=" font-size: 15px; font-family: 'Poppins', sans-serif; color: #EDA246;">alain</h1>
-    </div>
-    <div class="lower">
-        <div class="bio">
-            <h1 class="about">ABOUT</h1>
-            <hr style="background-color: #EDA246;
-            width: 110px;
-            height: 5px;
-            border: none;">
-            <h1 style="padding: 1rem 0; font-size: 15px; font-family: 'Poppins', sans-serif;">SHORT BIOGRAPH</h1>
-            <p>Katie is a seasoned marketing professional with over 10 years of experience in digital <br>advertising strategies. She has helped numerous brands achieve their online marketing <br>goals, leading to increased visibility and 3x revenue YoY</p>
-        </div>
-        <div class="manifesto">
-            <h1 style="padding: 1rem 0; font-size: 15px; font-family: 'Poppins', sans-serif;">ELECTION MANIFESTO</h1>
-            <p>I am a hard-working and driven individual who isn't afraid to face a challenge. I'm <br>
-                passionate about my work and I know how to get the job done. <br>
-
-                I would describe myself as an open and honest person who doesn't believe in misleading <br>
-                other people and tries to be fair in everything I do.</p>
-        </div>
-        <button onclick="hidePop()" class="back">Back</button>
-    </div>
-    </div>
-    </div>
     <div class="candCont">
         <?php 
         include('adminConn.php');
         $levels=$_SESSION['Level'];
 
     if($levels==111){
-        $query1 = "SELECT * FROM positions WHERE (positionId = 7 OR positionId = 8)";
+        $query1 = "SELECT * FROM positions WHERE (positionId = 22 OR positionId = 23)";
     }else{
 
-        $query1 = "SELECT * FROM positions WHERE NOT (positionId = 7 OR positionId = 8)";
+        $query1 = "SELECT * FROM positions WHERE NOT (positionId = 22 OR positionId = 23)";
     }
         $record1 = mysqli_query($conn, $query1);
         echo "<form action=\"votesSubmit.php\" method=\"POST\">";
@@ -249,16 +220,6 @@
     
     </section>
     <?php  }?>
-    <script>
-        function showPopUp() {
-            const popUp = document.getElementById('show');
-            popUp.style.display = "flex";   
-        }
-        function hidePop() {
-            const popUp = document.getElementById('show');
-            popUp.style.display = "none";   
-        }
-    </script>
     <footer>
         <div class="logo2">
             <img src="./Assets/Agahozo+Shalom+Logo.png" alt="logo" style="height: 50px; width: 50px; margin-left: -2rem;">
@@ -284,5 +245,46 @@
             </ul>
         </div>
     </footer>
+    <div class="popUpContainer" id="show">
+    <?php 
+        include('adminConn.php');
+        $query2 = "SELECT *FROM candidate";
+        $record2 = mysql_query($conn,$query2);
+    echo"<div class=\"profilePopUp\">";
+    echo"<svg style=\"position: absolute; cursor: pointer; margin-left: 14rem; top: 1rem; display: inline-block;\" onclick=\"hidePop()\" width=\"20px\" height=\"20px\" viewBox=\"-133.12 -133.12 778.24 778.24\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" class=\"iconify iconify--fxemoji\" preserveAspectRatio=\"xMidYMid meet\" fill=\"#000000\" stroke=\"#000000\" stroke-width=\"0.00512\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"><rect x=\"-133.12\" y=\"-133.12\" width=\"778.24\" height=\"778.24\" rx=\"389.12\" fill=\"#eda246\" strokewidth=\"0\"></rect></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"><path fill=\"#fff\" d=\"M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z\"></path></g></svg>";
+    echo"<div class=\"upper\">";
+    while($row2 = mysqli_fetch_assoc($record2)){
+        echo"<img src=\".\Assets\Rectangle(2).png\" alt=\"\" height=\"100px\" width=\"100px\">";
+        echo"<h1 style=\" font-size: 15px; font-family: 'Poppins', sans-serif; color: #EDA246;\">{$row2['Name']}</h1>";
+    echo"</div>";
+    echo"<div class=\"lower\">";
+        echo"<div class=\"bio\">";
+            echo"<h1 class=\"about\">ABOUT</h1>";
+            echo"<hr style=\"background-color: #EDA246;
+            width: 110px;
+            height: 5px;
+            border: none;\">";
+            echo"<h1 style=\"padding: 1rem 0; font-size: 15px; font-family: 'Poppins', sans-serif;\">SHORT BIOGRAPH</h1>";
+            echo"<p>{$row2['Bio']}</p>";
+        echo"</div>";
+        echo"<div class=\"manifesto\">";
+            echo"<h1 style=\"padding: 1rem 0; font-size: 15px; font-family: 'Poppins', sans-serif;\">ELECTION MANIFESTO</h1>";
+            echo"<p>{$row2['Manifesto']}</p>";
+        echo"</div>";
+        echo"<button onclick=\"hidePop()\" class=\"back\">Back</button>";
+    echo"</div>";
+}
+?>
+</div>
+<script>
+        function showPopUp() {
+            const popUp = document.getElementById('show');
+            popUp.style.display = "flex";   
+        }
+        function hidePop() {
+            const popUp = document.getElementById('show');
+            popUp.style.display = "none";   
+        }
+    </script>
 </body>
 </html>
