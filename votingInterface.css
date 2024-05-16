@@ -10,7 +10,8 @@ body {
     background-color: #F8F5EF;
 }
 .mainContainer {
-    
+    display: flex;
+    flex-direction: column;
 }
 .displayCand {
     display: grid;
@@ -23,6 +24,7 @@ body {
 .president {
     position: relative;
     margin-top: 2rem;
+    z-index: 1;
 }
 
 .cand1 {
@@ -35,6 +37,7 @@ body {
     gap: 20px;
     width: 20rem;
     height: 30rem;
+    z-index: 1;
 }
 
 .profile {
