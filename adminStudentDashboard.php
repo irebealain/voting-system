@@ -81,7 +81,9 @@ if(!isset($_SESSION['Email'])){
                 
             <!-- table overview -->
             <div class="table-container">
-            <input type="text" id="searchBox" placeholder="Search by Name">
+            <div class="searchBoxContainer">
+                <input type="text" id="searchBox" placeholder="Search by Name"></div>
+            
                 <table id="dataTable">
                     <thead>
                         <tr>

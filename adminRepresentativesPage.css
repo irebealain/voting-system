@@ -286,9 +286,9 @@ svg::after {
     align-items: center;
     background-color: #fff;
     border-radius: 30px;
-    gap: 25px;
-    width: 17rem;
-    height: 25rem;
+    gap: 20px;
+    width: 18rem;
+    height: 30rem;
     padding: 0.8rem 0;
     transition: transform 0.3s;
 }
@@ -300,7 +300,7 @@ svg::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
 }
 .profile > img {
     border-radius: 50%;

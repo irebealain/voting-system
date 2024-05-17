@@ -27,7 +27,7 @@ if(!isset($_SESSION['name'])){
             <p>Your account has been created</p>
             <p>successfully.</p>
         </div>
-        <a href="userLandingPage.php" style="text-decolation: none;"><button>CONTINUE</button></a>
+        <a href="userLandingPage.php" style="text-decoration: none;"><button>CONTINUE</button></a>
     </div>
 </body>
 </html>
