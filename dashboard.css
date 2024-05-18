@@ -267,7 +267,7 @@ svg::after {
 .perProf {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
   padding-bottom: 1rem;
 }
 
@@ -332,4 +332,7 @@ tbody tr:nth-child(odd) td {
 }
 .notProf {
   position: relative !important;
+}
+.notifications:hover{
+  text-decoration: none !important;
 }

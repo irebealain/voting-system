@@ -135,7 +135,7 @@ if(!isset($_SESSION['Email'])){
 
     <!-- pop up codes of candidate -->
     <div id="popupBackground">
-    <div class="container" style="height: 500px; width: 350px;">  
+    <div class="container" style="height: 100%; width: 100%; max-width: 30%; max-height: 90%;>  
         <div class="addCand">
             <svg onclick="hidePopup()" style="position: absolute; cursor: pointer; margin-left: 16rem; top: 1rem; display: inline-block;" onclick="hidePop()" width="20px" height="20px" viewBox="-133.12 -133.12 778.24 778.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-133.12" y="-133.12" width="778.24" height="778.24" rx="389.12" fill="#eda246" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z"></path></g></svg>
             <form action="adminConn.php" method="POST" enctype="multipart/form-data">
@@ -165,7 +165,7 @@ if(!isset($_SESSION['Email'])){
                 </div>
                 <div class="inputbox_1">
                     <p>Candidate Bio</p>
-                    <textarea name="biograph" id="" cols="35" rows="4" style="padding: 2px;"></textarea>
+                    <textarea name="biograph" id="" cols="35" rows="4" style="padding: 2px; width: 350px;"></textarea>
                 </div>
                 <div class="inputbox_1">
                     <p>Candidate Manifesto</p>

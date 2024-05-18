@@ -318,20 +318,23 @@ tbody tr:nth-child(odd) td {
 
 .chart-card {
   display: flex;
-  justify-content: flex-start;
-  border: 1px solid #ccc;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
   flex-wrap: wrap;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* border-radius: 5px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   margin-bottom: 20px;
   
 }
-
+#chart_container {
+  border: none !important;
+}
 #chart_container > div {
   flex: 1;
   background-color: lightgrey;
-  min-width: 32%; /* Each inner div takes at least 30% of the width */
-  max-width: 32%; /* Each inner div takes at most 30% of the width */
+  min-width: 50%; /* Each inner div takes at least 30% of the width */
+  max-width: 50%; /* Each inner div takes at most 30% of the width */
   margin-right: 0.5rem; /* Add right margin for spacing */
   margin-bottom: 1rem; /* Add right margin for spacing */
   border-radius: 3rem;
