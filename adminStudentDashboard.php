@@ -114,7 +114,7 @@ while ($disp8 = mysqli_fetch_assoc($recorquery)) {
         <td>" . $disp8['Family'] . "</td>
         <td>" . $disp8['Grade'] . "</td>
         <td>" . $disp8['Class'] . "</td>
-        
+        <td>"<button class=\"updateBtn\"><a href='#'>Update</a></button>"</td>
     </tr>
     ";
 }
