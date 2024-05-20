@@ -207,7 +207,10 @@
                 
                     echo "<div style='text-align: center; float:right'>"; // Start a container with center alignment
                     echo "<button type=\"submit\" name=\"submitVotes\" style=\"margin-right: 35rem;
-                    margin-top: 7rem;\">SUBMIT</button>";
+                    margin-top: 7rem;\" position: \"relative\";
+                    bottom: 0;
+                    right: 38rem;
+                    top: 20rem;\">SUBMIT</button>";
                     echo "</div>"; // End of the container
 
 

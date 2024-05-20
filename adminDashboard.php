@@ -75,7 +75,7 @@ if(!isset($_SESSION['Email'])){
             <div class="rightNavBar">
                 <h1 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.7rem;">Overview</h1>
                 <div class="notProf" style="gap: 2.5rem;">
-                    <svg width="25px" height="25px" class="notifications" style="margin-top: -0.1rem;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(30)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#EDA246" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"> <path d="M18.7491 9.70957V9.00497C18.7491 5.13623 15.7274 2 12 2C8.27256 2 5.25087 5.13623 5.25087 9.00497V9.70957C5.25087 10.5552 5.00972 11.3818 4.5578 12.0854L3.45036 13.8095C2.43882 15.3843 3.21105 17.5249 4.97036 18.0229C9.57274 19.3257 14.4273 19.3257 19.0296 18.0229C20.789 17.5249 21.5612 15.3843 20.5496 13.8095L19.4422 12.0854C18.9903 11.3818 18.7491 10.5552 18.7491 9.70957Z" stroke="#EDA246" stroke-width="1.5"></path> <path d="M7.5 19C8.15503 20.7478 9.92246 22 12 22C14.0775 22 15.845 20.7478 16.5 19" stroke="#EDA246" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    <a href="adminStatisticPage.php"><svg width="25px" height="25px" class="notifications" style="margin-top: -0.1rem;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(30)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#EDA246" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"> <path d="M18.7491 9.70957V9.00497C18.7491 5.13623 15.7274 2 12 2C8.27256 2 5.25087 5.13623 5.25087 9.00497V9.70957C5.25087 10.5552 5.00972 11.3818 4.5578 12.0854L3.45036 13.8095C2.43882 15.3843 3.21105 17.5249 4.97036 18.0229C9.57274 19.3257 14.4273 19.3257 19.0296 18.0229C20.789 17.5249 21.5612 15.3843 20.5496 13.8095L19.4422 12.0854C18.9903 11.3818 18.7491 10.5552 18.7491 9.70957Z" stroke="#EDA246" stroke-width="1.5"></path> <path d="M7.5 19C8.15503 20.7478 9.92246 22 12 22C14.0775 22 15.845 20.7478 16.5 19" stroke="#EDA246" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></a>
                     <div class="popup" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                         <img src="./Assets/Rectangle.png" alt="admin profile" height="35px" width="35px">
                         <span class="popuptext" id="myPopup" style="font-size: 9px;     text-align: center; margin: 0 !important;"><?php echo $_SESSION['Names']; ?></span>
@@ -113,7 +113,7 @@ if(!isset($_SESSION['Email'])){
                 <p style='font-size: 0.9em; color: #EDA246; margin-top: -0.6rem;'>{$t1['Name']}</p>
                 <div class=\"perProf\">
                     <h1 style='font-size: 2.7rem; color: #CCC6B4;'>$percentage%</h1>
-                    <img src='./Assets/Rectangle (1).png' alt='profile pic' height='70px' width='70px'>
+                    <img src='./Assets/Rectangle (1).png' alt='profile pic' height='95%' width='30%' max-width= '30%' margin-right='0.8rem'>
                 </div>
             </div><br>";
                     }
@@ -235,7 +235,7 @@ $chartData = json_encode($data);
         var options = {
             title: 'Voting Statistics',
             pieHole: 0.4,
-            colors: ['green', 'red'],
+            colors: ['#48805F', '#EDA246'],
         };
 
         var chart = new google.visualization.PieChart(container);

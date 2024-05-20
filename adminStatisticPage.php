@@ -142,7 +142,7 @@ while($row = $query->fetch_assoc()){
                 var options = {
                     title: description,
                     pieHole: 0.4,
-                    colors: ['blue', 'red', 'maroon', 'green', 'brown', 'cyan'],
+                    colors: ['#EDA246', '#48805F', '#776449', '#F6D109', 'brown', 'cyan'],
                 };
 
                 var chart = new google.visualization.PieChart(container);
