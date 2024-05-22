@@ -106,7 +106,8 @@ if(!isset($_SESSION['Email'])){
                     if($res){
                         $n_votes=mysqli_num_rows($a);
                         $to_votes=mysqli_num_rows($tv0);
-                        $percentage =( ($n_votes/$to_votes)*100);
+                        $round=round((($n_votes/$to_votes)*100),1);
+                        $percentage =$round;
         echo "
             <div class=\"cart\">
                 <h2 style='font-family: \"Poppins\", sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;'>{$r['Name']}</h2>

@@ -137,3 +137,13 @@
                 opacity: 0;
             }
         }
+
+
+
+
+        while($row1 = mysqli_fetch_assoc($data)){
+                echo"<div class=\"candidateProfile\">";
+                echo"<img src=\"./Assets/{$row1['candimages']}\" alt=\"profile image\" style=\"height: 70px; width: 70px;\">";
+                echo"<p>{$row1['Name']}</p>";
+            echo"</div>";
+            }

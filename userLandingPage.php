@@ -133,12 +133,15 @@ if(!isset($_SESSION['ID'])){
         <div class="profiles">
         <?php 
             include('adminConn.php');
-            $query1 = "SELECT * FROM candidate";
+            $query1 = "SELECT * FROM positions";
             $data = mysqli_query($conn,$query1);
-            while($row1 = mysqli_fetch_assoc($data)){
+            while($record=mysqli_fetch_assoc($data)){
+                $query2 = "SELECT * FROM candidate WHERE `PositionId`= '{$data['positionId']}'";
+                $data1 = mysqli_connect($conn,$query2);
                 echo"<div class=\"candidateProfile\">";
-                echo"<img src=\"./Assets/{$row1['candimages']}\" alt=\"profile image\" style=\"height: 70px; width: 70px;\">";
-                echo"<p>{$row1['Name']}</p>";
+                echo"<img src=\"./Assets/{$data['candimages']}\" alt=\"profile image\" style=\"height: 70px; width: 70px;\">";
+                echo"<p>{$data['PositionId']}</p>";
+                echo"<p>{$data['Name']}</p>";
             echo"</div>";
             }
 

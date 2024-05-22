@@ -141,7 +141,10 @@ while($row = $query->fetch_assoc()){
 
                 var options = {
                     title: description,
-                    pieHole: 0.4,
+                    is3D: true,
+                    pieHole: 0.2,
+                    width:600,
+                    height:300,
                     colors: ['#EDA246', '#48805F', '#776449', '#F6D109', 'brown', 'cyan'],
                 };
 
