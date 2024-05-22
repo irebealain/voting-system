@@ -95,12 +95,18 @@
         header("location: addAdminPage.php");
     }
     // deleting the administrators 
-    if(isset($_GET['deleteid'])){
-        // Sanitize the input
-        $id = mysqli_real_escape_string($conn, $_GET['deleteid']);
-
-        // Execute the DELETE query
-        $sql = "DELETE FROM `admin` WHERE `admin`.`Email` = '$id'";
-        $result = mysqli_query($conn, $sql);
+    if(isset($_POST['changePswd'])){
+        // Assuming you have already established a database connection and stored it in $conn
+        session_start();
+        $userid = $_SESSION['ID'];
+        $oldPswd = $_POST['old'];
+        $newPswd = $_POST['new'];
+      
+        $query2 = "UPDATE `users` SET `Password` = '$newPswd' WHERE `UserId` = '$userid'";
+       
+        mysqli_query($conn,$query2);
+        echo"Your password has changed";
+        header("location: userLandingPage.php");
     }
+
 ?>

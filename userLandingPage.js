@@ -82,4 +82,7 @@ function changeSlidePrev() {
 document.querySelector('.icon1').addEventListener('click', changeSlidePrev);
 
 // typing text 
+function changeArlet(){
+    console.log(alert('Congulatulations!😯😯😯 Your password has been changed'))
+}
 
