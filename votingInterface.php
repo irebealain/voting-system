@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="votingInterface.js"> -->
     
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
