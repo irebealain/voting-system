@@ -245,10 +245,11 @@ svg::after {
 .repCarts {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 0.5rem;
+  row-gap: 1.5rem;
   margin-top: 2rem;
-  width: 80%;
-  max-width: 95%;
+  width: 90%;
+  max-width: 100%;
+  transform: translate(35px, 10px);
 }
 .cart {
   display: flex;
@@ -267,7 +268,7 @@ svg::after {
 .perProf {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2.1rem;
   padding-bottom: 1rem;
 }
 
@@ -314,21 +315,22 @@ tbody tr:nth-child(odd) td {
   margin-left: 3rem;
   /* margin-right: 1rem; */
 }
-.notProf::before {
-    content: '6';
+.mainNotifications::before {
+    content: '10';
     display: flex;
     border-radius: 100%;
-    background-color: rgb(243, 116, 116);
+    background-color: #48805F;
     height: 15px;
     width: 15px;
     position: absolute;
     top: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     color: white;
     right: 8.3rem;
     text-align: center;
     align-items: center;
     justify-content: center;
+    z-index: 9;
 }
 .notProf {
   position: relative !important;
