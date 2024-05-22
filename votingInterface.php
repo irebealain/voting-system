@@ -194,7 +194,7 @@
                         <p style=\"font-weight: 600;\">Biography</p>
                         <p>{$row['Bio']}</p>
                     </div>
-                    <button onclick=\"showPopUp()\">VIEW PROFILE</button>
+                    <button onclick=\"showPopUp({$row['CandidateId']})\">VIEW PROFILE</button>
                     <label class=\"radio-container\">
                         <input type= \"radio\" value=\"{$row['CandidateId']}\" name=\"{$row1['positionId']}\" required>
                         <span class=\"checkmark\"></span>   
@@ -227,10 +227,10 @@
     <?php  }?>
     <footer>
         <div class="logo2">
-            <img src="./Assets/Agahozo+Shalom+Logo.png" alt="logo" style="height: 50px; width: 50px; margin-left: -2rem;">
+            <img  src="./Assets/Agahozo+Shalom+Logo.png" alt="logo" style="height: 50px; width: 50px; margin-left: -2rem;">
         </div>
         <div class="copyRight">
-            <p style="font-size: 0.8em;">&copy; 2024. Agahozo Shalom Youth Village. All rights reserved.
+            <p style="font-size: 0.8em;">&copy; 2024. Developed by <span style="color: #48805F; font-weight: 600;">Alain</span> and <span style="color: #48805F; font-weight: 600;">Emmanuel</span>. All rights reserved.
                 By using this site, you agree to all terms and conditions.</p>
         </div>
         <div class="footerLinks">
@@ -251,12 +251,11 @@
         </div>
     </footer>
     <div class="popUpContainer" id="show">
-
    <div class="profilePopUp">
     <svg style="position: absolute; cursor: pointer; margin-left: 14rem; top: 1.2rem; display: inline-block;" onclick="hidePop()" width="20px" height="20px" viewBox="-133.12 -133.12 778.24 778.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet\" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-133.12" y="-133.12\" width="778.24" height="778.24" rx="389.12" fill="#eda246" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z"></path></g></svg>
     <div class="upper">
-        <img src=".\Assets\Rectangle(2).png" alt="" height="100px" width="100px">
-        <h1 style=" font-size: 15px; font-family: 'Poppins', sans-serif; color: #EDA246;">Alain</h1>
+        <img id='imi' src="" alt="" height="100px" width="100px">
+        <h1 id='Cname' style=" font-size: 15px; font-family: 'Poppins', sans-serif; color: #EDA246;"></h1>
     </div>
     <div class="lower">
         <div class="bio">
@@ -266,25 +265,57 @@
             height: 5px;
             border: none;">
             <h1 style="padding: 1rem 0; font-size: 15px; font-family: 'Poppins', sans-serif;">SHORT BIOGRAPH</h1>
-            <p>The “building blocks” of proteins, which your body uses not only for your biceps and quads but also your skin, hair, blood, bones, and a whole lot more.</p>
+            <p id='bio' ></p>
         </div>
         <div class="manifesto">
             <h1 style="padding: 1rem 0; font-size: 15px; font-family: 'Poppins', sans-serif;">ELECTION MANIFESTO</h1>
-            <p>The “building blocks” of proteins, which your body uses not only for your biceps and quads but also your skin, hair, blood, bones, and a whole lot more.</p>
+            <p id='manifesto'></p>
         </div>
         <button onclick="hidePop()" class="backer">Back</button>
     </div>
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-        function showPopUp() {
-            const popUp = document.getElementById('show');
-            popUp.style.display = "flex";   
+    function showPopUp(CandidateId) {
+    // AJAX request to fetch data from PHP script
+    $.ajax({
+        url: 'fetchData.php',
+        type: 'GET',
+        data: { CandidateId: CandidateId }, // Pass the userId as parameter
+        dataType: 'json',
+        success: function(response) {
+            // Update HTML elements with fetched data
+            $('#bio').text(response.Bio);
+            $('#manifesto').text(response.Manifesto);
+            $('#Cname').text(response.Name);
+
+            var imagePath = './Assets/candimages/' + response.candimages;
+            $('#imi').attr('src', imagePath);
+            // Show the pop-up
+            $('#show').fadeIn();
+        },
+        error: function(xhr, status, error) {
+            // Handle error
+            console.error('Error fetching data:', status, error);
         }
+    });
+}
+
+    // function showPopUp(value) {
+    //     const popUp = document.getElementById('show');
+    //     const imi=document.getElementById('imi');
+    //     const bio=document.getElementById('bio');
+    //     const manifesto=document.getElementById('manifesto');
+    // }
+    // popUp.style.display = "flex";   
         function hidePop() {
             const popUp = document.getElementById('show');
             popUp.style.display = "none";   
         }
     </script>
+   
+
+
 </body>
 </html>
