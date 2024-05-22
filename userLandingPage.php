@@ -131,21 +131,28 @@ if(!isset($_SESSION['ID'])){
     <section class="thirdCandidateDisplay">
         <h5>16 CANDIDATES FOR THE STUDENT REPRESENTATIVES</h5>
         <div class="profiles">
-        <?php 
-            include('adminConn.php');
-            $query1 = "SELECT * FROM positions";
-            $data = mysqli_query($conn,$query1);
-            while($record=mysqli_fetch_assoc($data)){
-                $query2 = "SELECT * FROM candidate WHERE `PositionId`= '{$data['positionId']}'";
-                $data1 = mysqli_connect($conn,$query2);
+    <?php 
+        include('adminConn.php');
+        $query1 = "SELECT * FROM positions";
+        $data = mysqli_query($conn,$query1);
+        while($record=mysqli_fetch_assoc($data)){
+            $positionId = $record['positionId'];
+            $positionName = $record['Name']; // Fetch positionId from the current record
+            $query2 = "SELECT * FROM candidate WHERE `PositionId`= '$positionId'";
+            $data1 = mysqli_query($conn,$query2); // Changed from mysqli_connect to mysqli_query
+            // Fetch candidate data using mysqli_fetch_assoc
+            while($candidate = mysqli_fetch_assoc($data1)) {
                 echo"<div class=\"candidateProfile\">";
-                echo"<img src=\"./Assets/{$data['candimages']}\" alt=\"profile image\" style=\"height: 70px; width: 70px;\">";
-                echo"<p>{$data['PositionId']}</p>";
-                echo"<p>{$data['Name']}</p>";
-            echo"</div>";
+                echo"<p style=\"font-size: 0.9rem; color: #48805F; font-weight: 600;\">{$positionName}</p>";
+                echo"<img src=\"./Assets/candimages/{$candidate['candimages']}\" alt=\"profile image\" style=\"height: 70px; width: 70px; border-radius: 50%;\">";
+                 // Use $record instead of $data
+                echo"<p style=\"font-size: 0.8rem; color: #EDA246; font-weight: 600;\">{$candidate['Name']}</p>"; // Fetch candidate name from $candidate array
+                echo"</div>";
             }
+        }
+    ?>
+</div>
 
-        ?>
             <!-- Add more profiles as needed -->
         </div>
     </section>

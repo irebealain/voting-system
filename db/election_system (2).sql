@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2024 at 09:40 PM
+-- Generation Time: May 22, 2024 at 05:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -40,8 +40,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Email`, `Name`, `Gender`, `Password`, `ProfileImg`) VALUES
-('emmy@gmail.com', 'Irebe Gashumba Alain', 'Male', '123', 'profile.png'),
-('justin@asyv.org', 'Justin', 'Male', '1234567', 'Rectangle (1).png');
+('emmy@gmail.com', 'Semaza Emmanuel', 'Male', 'emmanuel', 'profile.png'),
+('irebalain@gmail.com', 'Irebe Gashumba Alain', 'Male', '123', 'profile.png'),
+('justin@asyv.org', 'Justin', 'Male', '123', 'Rectangle (1).png');
 
 -- --------------------------------------------------------
 
@@ -63,10 +64,13 @@ CREATE TABLE `candidate` (
 --
 
 INSERT INTO `candidate` (`CandidateId`, `Name`, `Bio`, `Manifesto`, `PositionId`, `candimages`) VALUES
-(10, 'Nyaxo Gashumba', 'G', 's', 1, 'mbb.jpg'),
-(11, 'Gashumba Mbavu', 'Good to go', 'I will remove taxes', 1, 'koko.png'),
-(13, 'Muteteri', 'dsfkjldskfj;kasdjflksd', 'fkdsjflksdj;fkdsjflsdkj', 8, 'mbb.jpg'),
-(14, 'kazuba', 'fjdslkfjds; fkjdsfdskjf;sd', 'fsdjfosdijfdsifodsjflds', 6, '434650827_122190502256007353_1967884405767166893_n.jpg');
+(17, 'Butati', 'The “building blocks” of proteins, which your body uses not only for your biceps and quads but also your skin, hair, blood, bones, and a whole lot more.', 'As a reminder, amino acids are, to use parlance of your high school bio teacher, the “building blocks” of proteins, which your body uses not only for your biceps and quads but also your skin, hair, blood, bones, and a whole lot more.', 11, 'mbb.jpg'),
+(19, 'kazuba', 'position: relative;\r\n    bottom: 0;\r\n    right: 38rem;\r\n    top: 20rem;', 'position: relative;\r\n    bottom: 0;\r\n    right: 38rem;\r\n    top: 20rem;', 13, 'uifaces-human-image.jpg'),
+(20, 'Nyaxo Gashumba', 'position: relative;\r\n    bottom: 0;\r\n    right: 38rem;\r\n    top: 20rem;', 'position: relative;\r\n    bottom: 0;\r\n    right: 38rem;\r\n    top: 20rem;', 12, 'uifaces-human-image.jpg'),
+(21, 'alain', '2023121002', '2023121002', 12, 'uifaces-human-image.jpg'),
+(22, 'Jackson', 'Gmail is the email service provided by Google. As of 2019, it had 1.5 billion active users worldwide, making it the largest email service in the world.', 'Gmail is the email service provided by Google. As of 2019, it had 1.5 billion active users worldwide, making it the largest email service in the world.', 11, 'koko.png'),
+(23, 'Paccy', 'Gmail is the email service provided by Google. As of 2019, it had 1.5 billion active users worldwide, making it the largest email service in the world.', 'Gmail is the email service provided by Google. As of 2019, it had 1.5 billion active users worldwide, making it the largest email service in the world.', 11, '434650827_122190502256007353_1967884405767166893_n.jpg'),
+(24, 'Teta Noella', 'As the sun rises each morning, it brings with it a brand new canvas upon which to paint our dreams, aspirations, and joys. In the vast tapestry of life, each day is a thread, weaving together moments of laughter, challenges, and growth.\r\n\r\n', 'Remember, every setback is an opportunity for resilience, every joy a reason to celebrate, and every connection a thread that strengthens the fabric of our existence.', 22, 'uifaces-human-image.jpg');
 
 -- --------------------------------------------------------
 
@@ -84,13 +88,19 @@ CREATE TABLE `positions` (
 --
 
 INSERT INTO `positions` (`positionId`, `Name`) VALUES
-(1, 'President'),
-(3, 'Vice-President'),
-(4, 'Education'),
-(5, 'Health and Wellness'),
-(6, 'Communication'),
-(7, 'Male Junior Minister'),
-(8, 'Female Junior Minister');
+(11, 'President'),
+(12, 'Communication'),
+(13, 'Female Minister of Health and Wellness'),
+(14, 'Male Minister of Health and Wellness'),
+(15, 'Female Minister of Education'),
+(16, 'Male Minister of Education'),
+(17, 'Minister of Clubs and Initiatives'),
+(18, 'Male Minister of Family and Gender Promotion'),
+(19, 'Female Minister of Family and Gender Promotion'),
+(20, 'Minister of Foreign Affairs'),
+(21, 'Minister of Cabinet Affairs'),
+(22, 'Female Junior Minister'),
+(23, 'Male Junior Minister');
 
 -- --------------------------------------------------------
 
@@ -643,9 +653,39 @@ CREATE TABLE `votes` (
 --
 
 INSERT INTO `votes` (`VoteId`, `UserId`, `CandidateId`, `PositionId`) VALUES
-(35, 2023126393, 13, 8),
-(36, 2023126223, 10, 1),
-(37, 2023126223, 14, 6);
+(44, 2023126222, 17, 11),
+(45, 2022112043, 17, 11),
+(46, 2022112043, 19, 13),
+(48, 2023121002, 17, 11),
+(49, 2023121002, 20, 12),
+(50, 2023121002, 19, 13),
+(52, 2023121005, 17, 11),
+(53, 2023121005, 21, 12),
+(54, 2023121005, 19, 13),
+(56, 2023122034, 17, 11),
+(57, 2023122034, 20, 12),
+(58, 2023122034, 19, 13),
+(59, 2023122043, 17, 11),
+(60, 2023122043, 20, 12),
+(61, 2023122043, 19, 13),
+(62, 2023123054, 17, 11),
+(63, 2023123054, 20, 12),
+(64, 2023123054, 19, 13),
+(65, 2023121021, 22, 11),
+(66, 2023121021, 21, 12),
+(67, 2023121021, 19, 13),
+(68, 2023121023, 22, 11),
+(69, 2023121023, 21, 12),
+(70, 2023121023, 19, 13),
+(71, 2023122029, 23, 11),
+(72, 2023122029, 21, 12),
+(73, 2023122029, 19, 13),
+(74, 2023122037, 22, 11),
+(75, 2023122037, 21, 12),
+(76, 2023122037, 19, 13),
+(77, 2023126193, 23, 11),
+(78, 2023126193, 21, 12),
+(79, 2023126193, 19, 13);
 
 --
 -- Indexes for dumped tables
@@ -693,19 +733,19 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `candidate`
 --
 ALTER TABLE `candidate`
-  MODIFY `CandidateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `CandidateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `positionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `positionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `VoteId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `VoteId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- Constraints for dumped tables
