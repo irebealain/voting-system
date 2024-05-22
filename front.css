@@ -30,6 +30,10 @@ body {
     font-style: normal;
     margin-top: -2.4rem;
 }
+.headings {
+    height: 3rem;
+    margin-top: 1rem !important;
+}
 button {
     display: flex;
     justify-content: center;
