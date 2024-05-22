@@ -332,6 +332,7 @@ button {
     margin-left: 2rem;
   }
 #popup {
+    /* position: relative; */
     background-color: white;
     padding: 20px;
     border-radius: 10px;
