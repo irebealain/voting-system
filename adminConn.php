@@ -1,8 +1,8 @@
 <?php
-    $server = 'sql108.infinityfree.com';
-    $user = 'if0_36617420';
-    $password = 'JUtoL4zVp0k';
-    $db = 'if0_36617420_electionSystem';
+    $server = 'localhost';
+    $user = 'root';
+    $password = '';
+    $db = 'election_system';
 
     $conn = mysqli_connect($server, $user, $password, $db);
     
