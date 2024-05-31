@@ -2,7 +2,7 @@
     $server = 'localhost';
     $user = 'root';
     $password = '';
-    $db = 'voting system';
+    $db = 'election_system';
 
     $conn = mysqli_connect($server, $user, $password, $db);
     
