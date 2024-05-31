@@ -96,6 +96,7 @@ $count = 0; // Initialize counter variable
 
 while ($r=mysqli_fetch_assoc($rep0)) {
     $CandidateId=$r['CandidateId'];
+    $image = $r['candimages'];
     $PositionId=$r['PositionId'];
     $v="SELECT * FROM votes WHERE `CandidateId`=$CandidateId";
     $t="SELECT `Name` FROM `positions` WHERE positionId=$PositionId";
@@ -118,7 +119,7 @@ while ($r=mysqli_fetch_assoc($rep0)) {
             <p style='font-size: 0.9em; color: #EDA246; margin-top: -0.6rem;'>{$t1['Name']}</p>
             <div class=\"perProf\">
                 <h1 style='font-size: 2.7rem; color: #CCC6B4;'>$percentage%</h1>
-                <img src='./Assets/Rectangle (1).png' alt='profile pic' height='65px' width= '65px; margin-right='0.8rem'>
+                <img src=\"./Assets/candimages/{$r['candimages']}\" alt='profile pic' height='65px' width= '65px; margin-right='0.8rem' style=\"border-radius: 50%;\">
             </div>
         </div><br>";
 
