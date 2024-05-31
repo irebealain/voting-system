@@ -9,6 +9,15 @@ function showPopup() {
 function hidePopup() {
     document.getElementById("popBackground").style.display = "none";
 }
+// Change password
+function showPop() {
+    document.getElementById("Background").style.display = "flex";
+}
+
+// Hide pop-up
+function hidePop() {
+    document.getElementById("Background").style.display = "none";
+}
 
 // Add event listeners
 document.getElementById("mySvg").addEventListener("click", showPopup);
@@ -73,4 +82,7 @@ function changeSlidePrev() {
 document.querySelector('.icon1').addEventListener('click', changeSlidePrev);
 
 // typing text 
+function changeArlet(){
+    console.log(alert('Congulatulations!😯😯😯 Your password has been changed'))
+}
 

@@ -1,0 +1,149 @@
+<div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Individual bubble style */
+.bubble {
+    position: absolute;
+    bottom: -150px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(237, 162, 70, 0.6);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+}
+
+.bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    background-color: rgba(237, 162, 70, 0.5);
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    left: 40%;
+    background-color: rgba(237, 162, 70, 0.4);
+    animation-duration: 14s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 15px;
+    height: 15px;
+    left: 60%;
+    background-color: rgba(237, 162, 70, 0.3);
+    animation-duration: 16s;
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+    width: 30px;
+    height: 30px;
+    left: 80%;
+    background-color: rgba(237, 162, 70, 0.7);
+    animation-duration: 18s;
+    animation-delay: 8s;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px);
+        opacity: 0;
+    }
+}
+
+
+.bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Individual bubble style */
+        .bubble {
+            position: absolute;
+            bottom: -150px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in;
+        }
+
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 12s;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 25px;
+            height: 25px;
+            left: 40%;
+            animation-duration: 14s;
+            animation-delay: 4s;
+        }
+
+        .bubble:nth-child(4) {
+            width: 15px;
+            height: 15px;
+            left: 60%;
+            animation-duration: 16s;
+            animation-delay: 6s;
+        }
+
+        .bubble:nth-child(5) {
+            width: 30px;
+            height: 30px;
+            left: 80%;
+            animation-duration: 18s;
+            animation-delay: 8s;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-800px);
+                opacity: 0;
+            }
+        }
+
+
+
+
+        while($row1 = mysqli_fetch_assoc($data)){
+                echo"<div class=\"candidateProfile\">";
+                echo"<img src=\"./Assets/{$row1['candimages']}\" alt=\"profile image\" style=\"height: 70px; width: 70px;\">";
+                echo"<p>{$row1['Name']}</p>";
+            echo"</div>";
+            }

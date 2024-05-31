@@ -15,7 +15,7 @@ body {
     align-items: center;
     padding: 70px 100px 0 100px;
     border-right: 1.5px solid rgb(134 124 124);
-    gap: 8%;
+    gap: 5.6rem;
     height: 100vh;
 }
 .heroSectionRight .headings {
@@ -28,6 +28,11 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
+    margin-top: -2.4rem;
+}
+.headings {
+    height: 3rem;
+    margin-top: 1rem !important;
 }
 button {
     display: flex;

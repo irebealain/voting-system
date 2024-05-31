@@ -206,14 +206,14 @@ span {
 .rightNavBar {
   display: flex;
   align-items: center;
-  gap: 45rem;
+  gap: 40rem;
   margin-left: 3rem;
   margin-top: 1.5rem;
 }
 .notProf {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 2.5rem;
 }
 
 svg {
@@ -243,13 +243,13 @@ svg::after {
   animation: movingAnimation 5s infinite alternate;
 }
 .repCarts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  row-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
   margin-top: 2rem;
-  width: 100%;
-  max-width: 95%;
+  width: 90%;
+  max-width: 100%;
+  transform: translate(35px, 10px);
 }
 .cart {
   display: flex;
@@ -257,8 +257,9 @@ svg::after {
   margin-left: 2.5rem;
   padding-top: 1.2rem;
   padding-left: 2rem;
+  padding-right: 0.3rem;
   width: 100%;
-  max-width: 80%;
+  max-width: 28%;
   background-color: #fff;
   border-radius: 1.6rem;
   align-items: flex-start;
@@ -267,7 +268,7 @@ svg::after {
 .perProf {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2.1rem;
   padding-bottom: 1rem;
 }
 
@@ -313,4 +314,27 @@ tbody tr:nth-child(odd) td {
   border-radius: 1.6rem;
   margin-left: 3rem;
   /* margin-right: 1rem; */
+}
+.mainNotifications::before {
+    content: '10';
+    display: flex;
+    border-radius: 100%;
+    background-color: #48805F;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 0.5rem;
+    font-size: 0.6rem;
+    color: white;
+    right: 8.3rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+.notProf {
+  position: relative !important;
+}
+.notifications:hover{
+  text-decoration: none !important;
 }

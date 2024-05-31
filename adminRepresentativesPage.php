@@ -70,854 +70,49 @@ if(!isset($_SESSION['Email'])){
         </div>
         <!-- Right side -->
         <div class="heroSection">
-            <div class="rightNavBar">
+            <div class="rightNavBar" style="gap: 35rem;">
                 <h1 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.7rem;">Candidates</h1>
-                <div class="notProf">
-                    <svg width="18px" height="18px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#EDA246" stroke="#EDA246"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus-circle</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#eda246"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                <div class="notProf" style="gap: 1.rem;">
+                        <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                        <a href="#"><p style="font-size: 0.8em;" onclick="showPopup()">Add candidate</p></a>
+
+                    <svg width="18px" height="18px" style="margin-left: 2rem;" 
+                    viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#EDA246" stroke="#EDA246"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus-circle</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#eda246"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
                     <a href="#"><p onclick="showPop()" style="font-size: 0.8em;">Add a position</p></a>
+                    
                 </div>
             </div>
             <!-- top representatives -->
-            <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Presidential position</h4>
             
-            <!--  -->
+            <!-- division containg all the candidates -->
             <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
+                <?php 
+                    include('adminConn.php');
+                    $query = "SELECT * FROM candidate ORDER BY Name Desc";
+                    $record = mysqli_query($conn, $query);
+                    
+                    while ($row = mysqli_fetch_assoc($record)) {
+                        $query = "SELECT Name FROM positions WHERE positionId={$row['PositionId']}";
+                        $record2 = mysqli_query($conn, $query);
+                        $row2 = mysqli_fetch_assoc($record2);
+                    
+                        echo "
+                        <div class=\"cand1\">
+                            <div class=\"profile\">
+                                <h4 style=\"font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;\">{$row2['Name']}</h4>
+                                <img src=\"./Assets/candimages/{$row['candimages']}\" alt=\"\" height=\"100px\" width=\"100px\">
+                                <p style=\"font-weight: 600;\">{$row['Name']}</p>
+                            </div>
+                            <div class=\"desc\">
+                                <p>{$row['Bio']}</p>
+                            </div>
+                            <button>VIEW PROFILE</button>
+                        </div>";
+                    }          
+                    
+                ?>
             </div>
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <!-- row 2 -->
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Vice President position</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Cabinet Affairs position</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Foreign Affairs position</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Gender & Family Promotion position - Male</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-            <!-- four -->
-            
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Gender & Family Promotion position - Female</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div onclick="showPopup()" class="cand2">
-                <svg width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Health & Wellness position - Male</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div onclick="showPopup()" class="cand2">
-                <svg width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Health & Wellness position - Female</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Sports & Culture position - Male</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Sports & Culture position - Female</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Education position - Male</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Education position - Female</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Clubs & Initiatives position</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Junior Minister position - Male</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
-        <h4 style="margin-bottom: -1rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Junior Minister position - Female</h4>
-        <div class="combinationCandidates">
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            
-            <!-- cand 2 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- cand 3 -->
-            <div class="cand1">
-                <div class="profile">
-                    <img src=".\Assets\Rectangle.png" alt="" height="100px" width="100px">
-                    <p style="font-weight: 600;">Ana Pillar</p>
-                </div>
-                <div class="desc">
-                    <p>I am a hard-working and driven </p>
-                    <p>individual who isn't afraid to face a</p>
-                    <p>challenge. I'm passionate about</p>
-                    <p>my work and I know how to get the</p>
-                    <p>job done.</p>
-                </div>
-                <button>VIEW PROFILE</button>
-                <!-- <button>VOTE</button> -->
-            </div>
-            <!-- four -->
-            <div class="cand2">
-                <svg onclick="showPopup()" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#8385c3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#8385c3"> <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-            </div>
-        </div>
+        
         </div>
     </section>
 
@@ -926,13 +121,13 @@ if(!isset($_SESSION['Email'])){
     <div class="container">
         <div class="addPos">
             <svg style="position: absolute; cursor: pointer; margin-left: 14rem; top: 1rem; display: inline-block;" onclick="hidePop()" width="20px" height="20px" viewBox="-133.12 -133.12 778.24 778.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-133.12" y="-133.12" width="778.24" height="778.24" rx="389.12" fill="#eda246" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z"></path></g></svg>
-            <form action="">
+            <form action="adminConn.php" method="POST">
                 <h1 style="font-size: 20px; color: #48805F;">Create Position</h1>
                 <div class="inputbox">
-                    <input type="text" required>
+                    <input type="text" name="posname" required>
                     <label for="" id="label">Name of Position</label>
                 </div>
-                <button onclick="hidePop()" style="margin-top: 7rem;">Create Position</button>
+                <button onclick="hidePop()" style="margin-top: 7rem;" type="submit" name="createPos">Create Position</button>
             </form>
         </div>
     </div> 
@@ -940,24 +135,43 @@ if(!isset($_SESSION['Email'])){
 
     <!-- pop up codes of candidate -->
     <div id="popupBackground">
-    <div class="container" style="height: 500px; width: 350px;">  
+    <div class="container" style="height: 100%; width: 100%; max-width: 30%; max-height: 90%;>  
         <div class="addCand">
             <svg onclick="hidePopup()" style="position: absolute; cursor: pointer; margin-left: 16rem; top: 1rem; display: inline-block;" onclick="hidePop()" width="20px" height="20px" viewBox="-133.12 -133.12 778.24 778.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-133.12" y="-133.12" width="778.24" height="778.24" rx="389.12" fill="#eda246" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M325.297 256l134.148-134.148c19.136-19.136 19.136-50.161 0-69.297c-19.137-19.136-50.16-19.136-69.297 0L256 186.703L121.852 52.555c-19.136-19.136-50.161-19.136-69.297 0s-19.136 50.161 0 69.297L186.703 256L52.555 390.148c-19.136 19.136-19.136 50.161 0 69.297c9.568 9.567 22.108 14.352 34.648 14.352s25.081-4.784 34.648-14.352L256 325.297l134.148 134.148c9.568 9.567 22.108 14.352 34.648 14.352s25.08-4.784 34.648-14.352c19.136-19.136 19.136-50.161 0-69.297L325.297 256z"></path></g></svg>
-            <form action="">
+            <form action="adminConn.php" method="POST" enctype="multipart/form-data">
                 <h1 style="font-size: 20px; color: #48805F;">Add a Candidate</h1>
                 <div class="inputbox">
-                    <input type="text" required>
-                    <label for="" id="label">Candidate ID</label>
+                    <input type="text" name="candName" required>
+                    <label for="" id="label">Name of Candidate</label>
+                </div>
+                <div class="inputbox">
+                
+                    <input type="file" name="cimage" accept="image/*" required>
+                    
+                </div>
+                <div class="pos">
+                <select name="choose">
+                    <option value="">Select Position</option>
+                    <?php 
+                        include('adminConn.php');
+                        $query="SELECT *FROM positions";
+                        $record=mysqli_query($conn,$query);
+                        while ($row = mysqli_fetch_assoc($record)) {
+                            echo '<option value="' . $row['positionId'] . '">' . $row['Name'] . '</option>';
+                        }
+                        
+                        ?>
+        </select>
                 </div>
                 <div class="inputbox_1">
                     <p>Candidate Bio</p>
-                    <textarea name="" id="" cols="35" rows="4" style="padding: 2px;"></textarea>
+                    <textarea name="biograph" id="" cols="35" rows="4" style="padding: 2px; width: 350px;"></textarea>
                 </div>
                 <div class="inputbox_1">
-                    <p>Candidate Bio</p>
-                    <textarea name="" id="" cols="35" rows="4"style="padding: 2px;"></textarea>
+                    <p>Candidate Manifesto</p>
+                    <textarea name="manifesto" id="" cols="35" rows="4"style="padding: 2px;"></textarea>
                 </div>
-                <button onclick="hidePopup()">Add</button>
+                <button onclick="hidePopup()" type="submit" name="addCand">Add</button>
             </form>
         </div>
     </div>

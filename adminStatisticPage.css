@@ -213,21 +213,14 @@ span {
 .notProf {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 1.5rem;
 }
 
 svg {
   position: relative;
   cursor: pointer;
 }
-svg::after {
-  content: '10';
-  border-radius: 100%;
-  background-color: red;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-}
+
 @keyframes movingAnimation {
   0% {
     transform: translateX(6.8rem);
@@ -250,6 +243,23 @@ svg::after {
   margin-top: 2rem;
   width: 100%;
   max-width: 95%;
+}
+.mainNotifications::before {
+  content: '10';
+  display: flex;
+  border-radius: 100%;
+  background-color: #48805F;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 1.9rem;
+  font-size: 0.6rem;
+  color: white;
+  right: 9.3rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
 }
 .cart {
   display: flex;
@@ -315,3 +325,28 @@ tbody tr:nth-child(odd) td {
   margin-top: 3rem;
   /* margin-right: 1rem; */
 }
+
+.chart-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  flex-wrap: wrap;
+  /* border-radius: 5px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  margin-bottom: 20px;
+  
+}
+#chart_container {
+  border: none !important;
+}
+#chart_container > div {
+  flex: 1;
+  background-color: lightgrey;
+  min-width: 50%; /* Each inner div takes at least 30% of the width */
+  max-width: 50%; /* Each inner div takes at most 30% of the width */
+  margin-right: 0.5rem; /* Add right margin for spacing */
+  margin-bottom: 1rem; /* Add right margin for spacing */
+  border-radius: 3rem;
+}
+

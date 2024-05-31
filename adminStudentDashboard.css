@@ -282,3 +282,25 @@ button {
   margin-top: 0.6rem;
   margin-left: 2rem;
 }
+#searchBox{
+  margin-bottom: 3rem;
+  border: 1px solid white;
+  height: 2rem;
+  width: 15rem;
+  padding: 0 0 0 0.5rem;
+  border-radius: 1rem;
+}
+#searchBox::placeholder {
+  padding: 0 0 0 0.2rem;
+}
+.searchBoxContainer {
+  float: right;
+  display: flex;
+  align-items: self-start;
+  height: 2rem;
+  width: 15rem;
+  margin-right: 4rem;
+  border: 0;
+  background-color: #fff;
+  border-radius: 1rem;
+}

@@ -1,8 +1,14 @@
+<?php 
+include('adminConn.php');
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
     <link rel="stylesheet" href="adminLogin.css">
     <title>Admin Login</title>
 </head>

@@ -13,53 +13,7 @@ if(!isset($_SESSION['Email'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
     <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Butati Lesly',     130],
-            ['John Kelly',      70],
-            ['Semaza Emmanuel',  304]
-        ]);
-
-        var options = {
-            title: 'Presidential Position',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-        }
-    </script>
-    <!-- bar chart -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Candidate', 'Number of Votes'],
-            ['Voted Student',     130],
-            ['Non Voted Students',      70],
-            // ['Semaza Emmanuel',  304]
-            // ['Watch TV', 2],
-            // ['Sleep',    7]
-        ]);
-
-        var options = {
-            title: 'Number of Voted Students',
-            titleTextStyle: { color: '#48805F', fontSize: 20, marginLeft: -2, marginTop: 0 },
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        chart.draw(data, options);
-        }
-    </script>
+    
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -120,70 +74,71 @@ if(!isset($_SESSION['Email'])){
         <div class="heroSection">
             <div class="rightNavBar">
                 <h1 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.7rem;">Overview</h1>
-                <div class="notProf">
-                    <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(30)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#EDA246" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"> <path d="M18.7491 9.70957V9.00497C18.7491 5.13623 15.7274 2 12 2C8.27256 2 5.25087 5.13623 5.25087 9.00497V9.70957C5.25087 10.5552 5.00972 11.3818 4.5578 12.0854L3.45036 13.8095C2.43882 15.3843 3.21105 17.5249 4.97036 18.0229C9.57274 19.3257 14.4273 19.3257 19.0296 18.0229C20.789 17.5249 21.5612 15.3843 20.5496 13.8095L19.4422 12.0854C18.9903 11.3818 18.7491 10.5552 18.7491 9.70957Z" stroke="#EDA246" stroke-width="1.5"></path> <path d="M7.5 19C8.15503 20.7478 9.92246 22 12 22C14.0775 22 15.845 20.7478 16.5 19" stroke="#EDA246" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
-                    <img src="./Assets/Rectangle.png" alt="admin profile" height="35px" width="35px">
+                <div class="notProf" style="gap: 2.5rem;">
+                <div class="mainNotifications">
+                    <a href="adminStatisticPage.php"><svg width="25px" height="25px" class="notifications" style="margin-top: -0.1rem;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(30)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#EDA246" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"> <path d="M18.7491 9.70957V9.00497C18.7491 5.13623 15.7274 2 12 2C8.27256 2 5.25087 5.13623 5.25087 9.00497V9.70957C5.25087 10.5552 5.00972 11.3818 4.5578 12.0854L3.45036 13.8095C2.43882 15.3843 3.21105 17.5249 4.97036 18.0229C9.57274 19.3257 14.4273 19.3257 19.0296 18.0229C20.789 17.5249 21.5612 15.3843 20.5496 13.8095L19.4422 12.0854C18.9903 11.3818 18.7491 10.5552 18.7491 9.70957Z" stroke="#EDA246" stroke-width="1.5"></path> <path d="M7.5 19C8.15503 20.7478 9.92246 22 12 22C14.0775 22 15.845 20.7478 16.5 19" stroke="#EDA246" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></a></div>
+                    <div class="popup" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <img src="./Assets/Rectangle.png" alt="admin profile" height="35px" width="35px">
+                        <span class="popuptext" id="myPopup" style="font-size: 9px;     text-align: center; margin: 0 !important;"><?php echo $_SESSION['Names']; ?></span>
+                    </div>
+                    
                 </div>
             </div>
             <!-- top representatives -->
             <h4 style="margin-left: 2rem; margin-left: 3rem; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Top representatives</h4>
             <div class="repCarts">
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
+            <?php 
+include('adminConn.php');
+$rep="SELECT * FROM `candidate` ORDER BY PositionId ASC";
+$rep0 = mysqli_query($conn,$rep);
+
+$count = 0; // Initialize counter variable
+
+while ($r=mysqli_fetch_assoc($rep0)) {
+    $CandidateId=$r['CandidateId'];
+    $PositionId=$r['PositionId'];
+    $v="SELECT * FROM votes WHERE `CandidateId`=$CandidateId";
+    $t="SELECT `Name` FROM `positions` WHERE positionId=$PositionId";
+    $t0=mysqli_query($conn,$t);
+    $t1=mysqli_fetch_assoc($t0);
+    // to count total votes for each position
+    $tv="SELECT * FROM votes WHERE PositionId=$PositionId";
+    $tv0=mysqli_query($conn,$tv);
+    $tv1=mysqli_fetch_assoc($tv0);
+    $a=mysqli_query($conn,$v);
+    $res=mysqli_fetch_assoc($a);
+    if($res){
+        $n_votes=mysqli_num_rows($a);
+        $to_votes=mysqli_num_rows($tv0);
+        $round=round((($n_votes/$to_votes)*100),1);
+        $percentage =$round;
+        echo "
+        <div class=\"cart\">
+            <h2 style='font-family: \"Poppins\", sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;'>{$r['Name']}</h2>
+            <p style='font-size: 0.9em; color: #EDA246; margin-top: -0.6rem;'>{$t1['Name']}</p>
+            <div class=\"perProf\">
+                <h1 style='font-size: 2.7rem; color: #CCC6B4;'>$percentage%</h1>
+                <img src='./Assets/Rectangle (1).png' alt='profile pic' height='65px' width= '65px; margin-right='0.8rem'>
+            </div>
+        </div><br>";
+
+        $count++; // Increment counter after displaying content
+
+        if ($count >= 6) { // Check if counter reaches 6
+            break; // Exit the loop
+        }
+    }
+}
+?>
+
+                
                 <!-- second candidate -->
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <!-- second candidate -->
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
-                <div class="cart">
-                    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-style: normal; color: #48805F; font-size: 1.2rem;">Teta Butati Lesly</h2>
-                    <p style="font-size: 0.9em; color: #EDA246;     margin-top: -0.6rem;">Presidential Position</p>
-                    <div class="perProf">
-                        <h1 style="font-size: 2.7rem; color: #CCC6B4;">98%</h1>
-                        <img src="./Assets/Rectangle (1).png" alt="profile pic" height="70px" width="70px">
-                    </div>
-                </div>
+                
             </div>
             <!-- statistics -->
             <h4 style="margin-bottom: 2rem; margin-left: 3rem; margin-top: 3rem; font-family: 'Poppins', sans-serif; font-weight: 500; font-style: normal; color: #EDA246;">Overview Statistics</h4>
             <div class="statisticsCart">
-                <div id="piechart_3d_2" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
-                <div id="piechart_3d" style="width: 90%; height: 300px; border-radius: 1.6rem;"></div>
+            <div id="piechartVoters"></div>
             </div>
             <!-- table overview -->
             <div class="table-container">
@@ -198,124 +153,108 @@ if(!isset($_SESSION['Email'])){
                             <th>Family</th>
                             <th>Grade</th>
                             <th>Class</th>
+                            <th>Candidate</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
-                        <tr>
-                            <td><img src="./Assets/Rectangle.png" alt="" style="height: 45px;
-                                width: 45px;"></td>
-                            <td>202306154</td>
-                            <td>Irebe Gashumba Alain</td>
-                            <td>Male</td>
-                            <td>Rugamba Cyprien</td>
-                            <td>Intwali</td>
-                            <td>S5 MPC</td>
-                            <td style="color: #EDA246;">Voted</td>
-                        </tr>
+                    <?php
+include('adminConn.php');
+$disq = "SELECT users.Name as 'VOTER NAME', users.UserId as 'REG NO', users.Gender as 'Gender', users.Family as 'Family', users.Grade as 'Grade', users.Class as 'Class', candidate.Name as 'Candidaten'
+        FROM users
+        INNER JOIN votes ON votes.UserId = users.UserId 
+        INNER JOIN candidate ON candidate.CandidateId = votes.CandidateId";
+
+$recorquery = mysqli_query($conn, $disq);
+while ($disp8 = mysqli_fetch_assoc($recorquery)) {
+    echo "
+    <tr>
+        <td><img src='./Assets/Rectangle.png' alt='' style='height: 45px; width: 45px;'></td>
+        <td>" . $disp8['REG NO'] . "</td>
+        <td>" . $disp8['VOTER NAME'] . "</td>
+        <td>" . $disp8['Gender'] . "</td>
+        <td>" . $disp8['Family'] . "</td>
+        <td>" . $disp8['Grade'] . "</td>
+        <td>" . $disp8['Class'] . "</td>
+        <td>" . $disp8['Candidaten'] . "</td>
+        <td style='color: #EDA246;'>Voted</td>
+    </tr>
+    ";
+}
+?>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
+    
+<!--  this is for chart to load very fast -->
+
+<?php
+include('adminConn.php');
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get total number of voters
+$sql_total_voters = "SELECT COUNT(*) as total_voters FROM users";
+$result_total_voters = mysqli_query($conn, $sql_total_voters);
+$row_total_voters = mysqli_fetch_assoc($result_total_voters);
+$total_voters = $row_total_voters['total_voters'];
+
+// Get number of votes
+$sql_votes = "SELECT COUNT(*) as total_votes FROM votes";
+$result_votes = mysqli_query($conn, $sql_votes);
+$row_votes = mysqli_fetch_assoc($result_votes);
+$total_votes = $row_votes['total_votes'];
+
+// Calculate number of people who did not vote
+$not_voted = $total_voters - $total_votes;
+
+// Create data array
+$data = array(
+    "total_votes" => $total_votes,
+    "not_voted" => $not_voted
+);
+
+// Encode data as JSON
+$chartData = json_encode($data);
+?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(function() {
+        drawChart(<?php echo $chartData; ?>);
+    });
+
+    function drawChart(chartData) {
+        var container = document.createElement('div');
+        container.id = 'chart_container';
+        document.getElementById('piechartVoters').appendChild(container);
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Data');
+        data.addColumn('number', 'Value');
+        data.addRows([
+            ['Total Votes', parseInt(chartData.total_votes)],
+            ['Not Voted', parseInt(chartData.not_voted)]
+        ]);
+
+        var options = {
+            title: 'Voting Statistics',
+            is3D: true,
+            height: 300,
+            width: 600,
+            pieHole: 0.4,
+            colors: ['#48805F', '#EDA246'],
+        };
+
+        var chart = new google.visualization.PieChart(container);
+        chart.draw(data, options);
+    }
+</script>
+
 </body>
 </html>
