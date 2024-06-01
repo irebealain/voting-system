@@ -227,7 +227,7 @@ if(!isset($_SESSION['ID'])){
             <img src="./Assets/Agahozo+Shalom+Logo.png" alt="logo" style="height: 50px; width: 50px; margin-left: -2rem;">
         </div>
         <div class="copyRight">
-            <p style="font-size: 0.8em;">&copy; 2024. Agahozo Shalom Youth Village. All rights reserved.
+        <p style="font-size: 0.8em;">&copy; 2024. Developed by <span style="color: #48805F; font-weight: 600;">Alain</span> and <span style="color: #48805F; font-weight: 600;">Emmanuel</span>. All rights reserved.
                 By using this site, you agree to all terms and conditions.</p>
         </div>
         <div class="footerLinks">
