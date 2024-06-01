@@ -170,7 +170,7 @@ $recorquery = mysqli_query($conn, $disq);
 while ($disp8 = mysqli_fetch_assoc($recorquery)) {
     echo "
     <tr>
-        <td><img src='./Assets/profileimg.png' alt='' style='height: 45px; width: 45px; border-radius: 50%;'></td>
+        <td><img src='./Assets/img.png' alt='' style='height: 45px; width: 45px; border-radius: 50%;'></td>
         <td>" . $disp8['REG NO'] . "</td>
         <td>" . $disp8['VOTER NAME'] . "</td>
         <td>" . $disp8['Gender'] . "</td>
