@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voting Interface</title>
     <link rel="stylesheet" href="votingInterface.css">
+    <link rel="icon" href="./Assets/Agahozo+Shalom+Logo.png">
     <!-- <link rel="stylesheet" href="votingInterface.js"> -->
     
     <style>
