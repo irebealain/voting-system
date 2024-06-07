@@ -228,7 +228,7 @@ if(!isset($_SESSION['ID'])){
         </div>
         <div class="copyRight">
         <p style="font-size: 0.8em;">&copy; 2024. Developed by <span style="color: #48805F; font-weight: 600;">Alain</span> and <span style="color: #48805F; font-weight: 600;">Emmanuel</span>. All rights reserved.
-                By using this site, you agree to all terms and conditions.</p>
+                By using this site, you agree to all terms and conditions.</p>  
         </div>
         <div class="footerLinks">
             <ul class="socialMedia">
