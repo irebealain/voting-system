@@ -85,11 +85,11 @@ span{
 </head>
 <body>
     <div class="preloader">
-<div class="center">
+      <div class="center">
         <div class="ring"></div>
         <span>loading...</span>
-</div>
-</div>
+      </div>
+    </div>
 <script>
     
     function hidePreloader() {
